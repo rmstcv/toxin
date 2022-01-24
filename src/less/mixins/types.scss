@@ -1,0 +1,38 @@
+$size-root: 10px;
+$size-multiplicator: calc($size-root/1rem);
+
+$size-h1: calc(24px / $size-multiplicator);
+$size-h2: calc(19px / $size-multiplicator);
+$size-h3: calc(12px / $size-multiplicator);
+$size-body: calc(14px / $size-multiplicator);
+$type-main-color: $color-dark-100;
+$type-second-color: $color-dark-75;
+
+@mixin type-h1 {
+  font-size: $size-h1;
+  line-height: 2.9rem;
+  color: $type-main-color;
+  font-weight: 700;
+}
+
+@mixin type-h2 {
+  font-size: $size-h2;
+  line-height: 2.3rem;
+  color: $type-main-color;
+  font-weight: 700;
+}
+
+@mixin type-h3 {
+  font-size: $size-h3;
+  line-height: 1.4rem;
+  color: $type-main-color;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@mixin type-body {
+  font-size: $size-body;
+  line-height: 2.4rem;
+  color: $type-second-color;
+  font-weight: normal;
+}
