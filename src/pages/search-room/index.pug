@@ -1,4 +1,4 @@
-include ./blocks/header/header.pug
+include ../../blocks/header/header.pug
 
 doctype html
 html(lang="ru")
@@ -8,3 +8,5 @@ html(lang="ru")
     title Toxin
     
   body
+    .container
+      +header({logged: true})

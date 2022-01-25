@@ -46,7 +46,8 @@ const jsLoaders = () => {
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    main: './app.js'
+    main: './app.js',
+    // landingPage: './pages/landing-page/index.js',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -60,8 +61,24 @@ const config = {
   },
 
   plugins: [
+    // new HtmlWebpackPlugin({
+    //   template: './index.pug',
+    //   minify: {
+    //     collapseWhitespace: isProd
+    //   }
+    // }),
     new HtmlWebpackPlugin({
-      template: './index.pug',
+      template: './pages/landing-page/index.pug',
+      // chunks: ['landingPage'],
+      filename: 'landingPage.html',
+      minify: {
+        collapseWhitespace: isProd
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './pages/search-room/index.pug',
+      // chunks: ['searchRoom'],
+      filename: 'search-room.html',
       minify: {
         collapseWhitespace: isProd
       }

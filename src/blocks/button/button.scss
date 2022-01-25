@@ -1,0 +1,58 @@
+.simple-button {
+  min-width: 99px;
+  height: 44px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  border: none;
+  @include type-h3;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    opacity: 0.5;
+  }
+  &_uncolored {
+    color: $color-second;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(to right, #bc9cff 0%, #8ba4f9) border-box;
+    padding: 10px;
+    border: 2px solid transparent;
+    &_header {
+      width: 87px;
+      height: 34px;
+    }
+  }
+  &_unborded {
+    background: none;
+    border: none;
+    width: auto;
+    color: $color-second;
+    &:hover {
+      opacity: 1;
+      color: $color-dark-50;
+    }
+  }
+  &_long {
+    min-width: 320px;
+    position: relative;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      right: 4px;
+      transform: translate(-50%, -50%);
+      background: no-repeat url("blocks/button/arrow_forward_white.svg");
+    }
+  }
+  &_header {
+    min-width: 196px;
+    height: 34px;
+  }
+}

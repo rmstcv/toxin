@@ -1,0 +1,27 @@
+//- 
+  Принимает:
+    logged {bool} - true - отображается имя пользователя, по умолчанию - false
+    name {string} - имя пользователя если logged = true
+
+    Вызов:
+     +header({logged: true, name: "Юлий Цезарь"})
+
+include ../button/button.pug
+mixin header(options)
+  header.header
+    .header__wrapper
+      include ../logo-text/logo-text.pug
+      nav.header__nav-wrapper
+        a(class="header__nav header__nav_about" href="/mock-address/change-me") О нас
+        div(class="header__nav header__nav_services header__nav_drop" href="/mock-address/change-me") Услуги
+        a(class="header__nav header__nav_vacancies" href="/mock-address/change-me") Вакансии
+        a(class="header__nav header__nav_news" href="/mock-address/change-me") Новости
+        div(class="header__nav header__nav_agreements header__nav_drop" href="/mock-address/change-me") Соглашения
+        if options.logged
+          .header__logged
+            .header__divider
+            .header__user-name= options.name
+        else
+          .header__no-logged
+            +simple-button({type: 'uncolored-header',text: 'войти'})
+            +simple-button({type: 'long-header',text: 'зарегестрироваться'})

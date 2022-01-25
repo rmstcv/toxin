@@ -1,0 +1,28 @@
+[
+  {
+    "room": "888",
+    "class": "люкс",
+    "price": "9990",
+    "stars": "5",
+    "reviews": "145",
+    "images": [
+      "assets/images/rooms/room888.jpg",
+      "assets/images/rooms/room888.jpg",
+      "assets/images/rooms/room888.jpg",
+      "assets/images/rooms/room888.jpg"
+    ]
+  },
+  {
+    "room": "840",
+    "class": "",
+    "price": "9990",
+    "stars": "4",
+    "reviews": "65",
+    "images": [
+      "assets/images/rooms/room840.jpg",
+      "assets/images/rooms/room840.jpg",
+      "assets/images/rooms/room840.jpg",
+      "assets/images/rooms/room840.jpg"
+    ]
+  }
+]

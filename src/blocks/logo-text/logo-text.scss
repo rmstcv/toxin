@@ -1,0 +1,16 @@
+.logo-text {
+  display: inline-flex;
+  align-items: center;
+  &__logo {
+    width: 40px;
+    height: 40px;
+    background: no-repeat url("blocks/logo-text/logo.svg");
+    margin-right: 12.5px;
+  }
+  &__text {
+    width: 54px;
+    height: 14px;
+    background: no-repeat url("blocks/logo-text/toxin.svg");
+    background-size: auto auto;
+  }
+}
