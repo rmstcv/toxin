@@ -4,7 +4,7 @@
 //- Вызов:
         +simple-button({type: 'colored',text: 'click me'}) - цветная кнопка
         +simple-button({type: 'uncolored',text: 'click me'}) - нецветная кнопка
-        +simple-button({type: 'unborded',text: 'click me'}) - кнопка без бордера
+        +simple-button({type: 'no-border',text: 'click me'}) - кнопка без border
         +simple-button({type: 'long',text: 'click me'}) - широкая кнопка
         +simple-button({type: 'uncolored-header',text: 'click me'}) - нецветная кнопка для header
         +simple-button({type: 'long-header',text: 'click me'}) - широкая кнопка для header
@@ -18,8 +18,8 @@ mixin simple-button(options)
       button(class='simple-button simple-button_colored')= text  
     when 'uncolored'
       button(class='simple-button simple-button_uncolored')= text
-    when 'unborded'
-      button(class='simple-button simple-button_unborded')= text
+    when 'no-border'
+      button(class='simple-button simple-button_no-border')= text
     when 'long'
       button(class='simple-button simple-button_long')= text
     when 'long-header'

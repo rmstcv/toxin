@@ -14,7 +14,7 @@ const isProd = !isDev;
 const optimization = () => {
   const config = {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
     }
   }
 
@@ -46,8 +46,9 @@ const jsLoaders = () => {
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    main: './app.js',
-    // landingPage: './pages/landing-page/index.js',
+    // main: './app.js',
+    landingPage: './pages/landing-page/landing-page.js',
+    searchRoom: './pages/search-room/search-room.js',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -60,6 +61,8 @@ const config = {
     hot: isDev
   },
 
+  devtool: 'eval-cheap-module-source-map',
+
   plugins: [
     // new HtmlWebpackPlugin({
     //   template: './index.pug',
@@ -68,23 +71,24 @@ const config = {
     //   }
     // }),
     new HtmlWebpackPlugin({
-      template: './pages/landing-page/index.pug',
-      // chunks: ['landingPage'],
+      template: './pages/landing-page/landing-page.pug',
+      chunks: ['landingPage'],
       filename: 'landingPage.html',
       minify: {
         collapseWhitespace: isProd
       }
     }),
     new HtmlWebpackPlugin({
-      template: './pages/search-room/index.pug',
-      // chunks: ['searchRoom'],
+      template: './pages/search-room/search-room.pug',
+      chunks: ['searchRoom'],
       filename: 'search-room.html',
       minify: {
         collapseWhitespace: isProd
       }
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: '[name].[contenthash].css',
+      // chunkFilename: "[id].css",
     }),
     new CleanWebpackPlugin(),
     new ESLintPlugin(),

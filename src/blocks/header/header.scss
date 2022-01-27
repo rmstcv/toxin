@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 100%;
   &__wrapper {
@@ -9,7 +9,7 @@
     margin: 0 auto;
     max-width: $container-width;
     padding: 15px 140px;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
   &__nav-wrapper {
@@ -43,9 +43,10 @@
       margin-right: 45px;
     }
   }
-  &__nav:first-child {
-    color: $color-dark-75;
-    font-weight: 700;
+  &__nav:hover {
+    text-shadow: 0.6px 0.6px 0.6px currentColor, 0.6px 0.6px 0.6px currentColor,
+      0.6px 0 0 currentColor;
+    cursor: pointer;
   }
   &__nav button {
     margin-left: 20px;
@@ -53,8 +54,6 @@
   &__divider {
     width: 1px;
     height: 30px;
-    left: 1179px;
-    top: 270px;
     background: rgba(31, 32, 65, 0.1);
     margin-right: 20px;
   }

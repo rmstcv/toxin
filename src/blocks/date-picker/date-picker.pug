@@ -1,0 +1,20 @@
+//- 
+  Принимает:
+    dateIn {string} - дата приезда (!в формате "YYYY, m, D")
+    dateOut {string} - дата отъезда (!в формате "YYYY, m, D")
+    isOpen {bool} - показать date-picker
+    Вызов:
+      +addAirDatePicker({
+        dateIn: "2019, 7, 23",
+        dateOut: "2019, 7, 19",
+        isOpen: true;
+      })
+    // вызов date-picker.js: - создает экземпляр AirDatepicker (без dropdown field)
+    // import createAirDatePicker from '../date-picker/date-picker';
+    // createAirDatePicker(document.querySelector('.js-date-picker'));
+
+mixin addAirDatePicker (options)
+  -
+    var open = ""
+    open += options.isOpen ? "" : "date-picker_hide"
+  div(class=`date-picker js-date-picker ${open}` data-dateIn=options.dateIn data-dateOut=options.dateOut)

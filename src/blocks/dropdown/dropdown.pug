@@ -1,0 +1,50 @@
+//- 
+  Принимает:
+    fieldName {string} - подпись дропдауна
+    dropdownName {string} - имя класса обертки, для идетификации дропдауна
+    defaultItems {array of objects} - в формате: {"name":"взрослые","value":"0", "max":"3","min":"0"}
+    defaultContent {string} - текст плэйсхолдера
+    confirmPanel {bool} - дополнительно кнопки подтверждения и очистки
+    isSmal {bool} - ширина инпута(isMedium, по умолчанию isLarge)
+
+    Вызов:
+      +dropdown({
+        fieldName: "DROPDOWN",
+        dropdownName: "guests",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
+        confirmPanel: true,
+        isSmal: true
+      })
+
+mixin dropdown(options)
+  - 
+    var fieldLength = ""
+    fieldLength += options.isSmall ? "dropdown_small" : options.isMedium ? "dropdown_medium" : "dropdown_large"
+    var content = ""
+    content += options.defaultContent ? options.defaultContent : `${options.defaultItems[0].value} ${options.defaultItems[0].name}, ${options.defaultItems[1].value} ${options.defaultItems[1].name}...`
+  div(class = `${fieldLength} dropdown js-dropdown`  data-dropdown-name=options.dropdownName data-dropdown-content=options.defaultItems data-dropdown-content-default=content)
+    .dropdown__text-wrapper
+      p(class="dropdown__name")= options.fieldName
+    div(class="dropdown__field js-dropdown__field")
+      .dropdown__preview-wrapper.js-dropdown__preview-wrapper= content
+      .dropdown__check-wrapper
+        button(class = "dropdown__check-mark")
+    .dropdown__content-wrapper.js-dropdown__content-wrapper
+      .dropdown__content
+        if (options.defaultItems)
+          each val in options.defaultItems
+            div(class="dropdown__item-wrapper js-dropdown__item-wrapper")
+              div(class="dropdown__item-name")= val.name
+              div(class="dropdown__item-counter")
+                button(class="dropdown__counter dropdown__counter_prev js-dropdown__counter_prev dropdown__counter_extreme-value") -
+                div(class="dropdown__counter-value js-dropdown__counter-value")= val.value
+                button(class="dropdown__counter dropdown__counter_next js-dropdown__counter_next") +
+      if (options.confirmPanel)
+       .dropdown__confirm-panel.js-dropdown__confirm-panel
+          button(class="dropdown__confirm-button dropdown__confirm-button_clear js-dropdown__confirm-button_clear dropdown__confirm-button_hide") Очистить
+          button(class="dropdown__confirm-button dropdown__confirm-button_admit") Применить

@@ -1,0 +1,124 @@
+.dropdown {
+  position: relative;
+  width: 320px;
+  &_small {
+    width: 150px;
+  }
+  &_medium {
+    width: 266px;
+  }
+  &__name {
+    @include type-h3;
+  }
+  &__date {
+    @include type-body;
+    line-height: 1.8rem;
+  }
+  &__field {
+    width: 100%;
+    height: 44px;
+    border: 1px solid $color-dark-25;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    padding-left: 15px;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: $color-dark-75;
+    display: flex;
+    align-items: center;
+    &_darker {
+      border: 1px solid $color-dark-50;
+    }
+
+    &:hover {
+      border-color: $color-dark-50;
+    }
+    &_focus {
+      border-color: $color-dark-50;
+    }
+  }
+  &__content-wrapper {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    padding: 6px 6px 0px 15px;
+    border: 1px solid $color-dark-50;
+    box-shadow: (0px 10px 20px rgba(31, 32, 65, 0.05));
+    border-top: none;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    display: none;
+    &_show {
+      display: block;
+      z-index: 10;
+    }
+  }
+  &__check-wrapper {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    margin-top: 5px;
+    right: 0;
+    cursor: pointer;
+  }
+  &__check-mark {
+    @include dropdown-mark;
+  }
+  &__item-name {
+    @include type-h3;
+  }
+  &__item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+  }
+  &__item-counter {
+    display: flex;
+    align-items: center;
+    width: 92px;
+    justify-content: space-between;
+  }
+  &__counter {
+    background: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-dark-50;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 21px;
+    color: $color-dark-50;
+    cursor: pointer;
+    user-select: none;
+    &_extreme-value {
+      color: $color-dark-25;
+      border: 1px solid $color-dark-25;
+    }
+  }
+  &__counter-value {
+    @include type-h3;
+  }
+  &__confirm-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    margin-bottom: 12px;
+  }
+  &__confirm-button {
+    border: none;
+    background: none;
+    @include type-h3;
+    color: $color-second;
+    cursor: pointer;
+    &_admit {
+      margin-left: auto;
+    }
+    &_hide {
+      display: none;
+    }
+  }
+}

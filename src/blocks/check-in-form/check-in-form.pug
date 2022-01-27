@@ -1,0 +1,30 @@
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin check-in-form()
+  .check-in-form
+    .check-in-form__title Найдём номера под ваши пожелания
+    .check-in-form__dates
+      +dropdown-date({
+        fieldName: "ПРИБЫТИЕ", 
+        fieldNameDouble: "ВЫЕЗД", 
+        type: "text", 
+        placeholder: "ДД.ММ.ГГГГ",
+        isSmall: true,
+        isDouble: true
+      })
+    .check-in-form__guests
+      +dropdown({
+        fieldName: "ГОСТИ",
+        dropdownName: "guests",
+        defaultItems: [
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
+          {"name":"дети","value":"0","max":"3","min":"0"},
+          {"name":"младенцы","value":"0", "max":"3","min":"0"}
+          ],
+        defaultContent: "Сколько гостей",
+        confirmPanel: true
+      })
+    .check-in-form__button
+      +simple-button({type: "long", text: "ПОДОБРАТЬ НОМЕР"})

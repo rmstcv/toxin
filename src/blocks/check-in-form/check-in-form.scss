@@ -1,0 +1,21 @@
+@import "../dropdown/dropdown.scss";
+@import "../button/button.scss";
+@import "../dropdown-date/dropdown-date.scss";
+
+.check-in-form {
+  @include form-container;
+  background-color: #fff;
+  &__title {
+    @include type-h1;
+    @include input-large;
+  }
+  &__dates {
+    margin-top: 21px;
+  }
+  &__guests {
+    margin-top: 21px;
+  }
+  &__button {
+    margin-top: 30px;
+  }
+}
