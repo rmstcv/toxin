@@ -4,8 +4,7 @@
   border: 1px solid $color-dark-25;
   border-radius: 4px;
   padding-left: 15px;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
+  @include type-body;
   color: $color-dark-75;
   background-color: rgba(0, 0, 0, 0);
   display: block;
@@ -16,8 +15,8 @@
 }
 
 @mixin input-placeholder {
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  font-size: 0.875rem;
+  line-height: 0.889rem;
   color: $color-dark-25;
 }
 
@@ -36,4 +35,3 @@
 @mixin input-large {
   width: 320px;
 }
-

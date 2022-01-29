@@ -195,3 +195,7 @@
 .air-datepicker-nav--action[data-action="next"]::before {
   background: no-repeat url("/blocks/date-picker/arrow_forward_black.svg");
 }
+
+.dropdown-date__date-picker-double .air-datepicker-body--cells.-days- {
+  height: auto;
+}

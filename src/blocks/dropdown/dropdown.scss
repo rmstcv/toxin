@@ -1,11 +1,11 @@
 .dropdown {
   position: relative;
-  width: 320px;
+  @include input-large;
   &_small {
-    width: 150px;
+    @include input-small;
   }
   &_medium {
-    width: 266px;
+    @include input-medium;
   }
   &__name {
     @include type-h3;
@@ -22,8 +22,7 @@
     border-top-right-radius: 2px;
     padding-left: 15px;
     margin-top: 5px;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+    @include type-body;
     color: $color-dark-75;
     display: flex;
     align-items: center;

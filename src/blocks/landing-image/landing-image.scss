@@ -1,12 +1,20 @@
 .landing-image-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: -10;
+  max-width: 100%;
+  position: relative;
 }
 
-.landing-image {
+.landing-image img {
+  display: block;
   width: 100%;
   height: auto;
+}
+
+.landing-image__text {
+  position: absolute;
+  width: 297px;
+  right: 134px;
+  bottom: 18px;
+  @include type-body;
+  color: $color-dark-75;
+  text-align: right;
 }

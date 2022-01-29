@@ -10,7 +10,10 @@ html(lang="ru")
     title Toxin
     
   body
-    .container
-      +header({logged: false})
-      +landing-image()
-      +check-in-form()
+    .landing-page
+      .landing-page-container
+        +landing-image()
+        +header({logged: false})
+        .container
+          .landing-page__form
+            +check-in-form()

@@ -1,3 +1,5 @@
 mixin landing-image()
   .landing-image-container
-    img(class="landing-image" src=require("/blocks/landing-image/" + "image3" + ".jpg") alt="image" loading="lazy")
+    .landing-image
+      img(class="landing-image__image" src=require("/blocks/landing-image/" + "image3" + ".jpg") alt="image" loading="lazy")
+    .landing-image__text Лучшие номера для вашей работы, отдыха и просто вдохновения

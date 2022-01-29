@@ -1,3 +1,7 @@
+@import "./less/style";
+@import "./pages/landing-page/landing-page";
+@import "./pages/search-room/search-room";
+
 * {
   font-family: "Montserrat", Arial, sans-serif;
   box-sizing: border-box;
@@ -13,5 +17,4 @@ html {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 141px 0 140px;
-  position: relative;
 }

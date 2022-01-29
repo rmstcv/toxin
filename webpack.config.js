@@ -15,6 +15,7 @@ const optimization = () => {
   const config = {
     splitChunks: {
       chunks: 'all',
+      minChunks: 2,
     }
   }
 
