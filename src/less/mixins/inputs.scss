@@ -25,13 +25,13 @@
 }
 
 @mixin input-small {
-  width: 150px;
+  max-width: 150px;
 }
 
 @mixin input-medium {
-  width: 266px;
+  max-width: 266px;
 }
 
 @mixin input-large {
-  width: 320px;
+  max-width: 320px;
 }

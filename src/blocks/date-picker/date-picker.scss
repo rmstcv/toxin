@@ -199,3 +199,7 @@
 .dropdown-date__date-picker-double .air-datepicker-body--cells.-days- {
   height: auto;
 }
+
+.air-datepicker-cell.-selected-.-current- {
+  background: $color-third;
+}

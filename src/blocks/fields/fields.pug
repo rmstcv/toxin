@@ -1,0 +1,32 @@
+//- Принимает:
+    fieldName {string} - имя поля
+    type {string} - тип input (text, password, date, email)
+    placeholder {string} - плейсхолдер
+    subscr {bool} - кнопка "подписаться"
+    isMedium {bool} - ширина поля (isSmall, isLarge - по умолчанию)
+    Вызов:
+      +field-default({
+        fieldName: "SUBSCRIPTION TEXT FIELD", 
+        type: "email", 
+        placeholder: "Email",
+        subscr: true,
+        isMedium: true
+      })
+
+
+mixin field-default(options)
+  - 
+    var fieldLength = ""
+    fieldLength += options.isSmall ? "field-default_small" :
+      options.isMedium ? "field-default_medium" :
+      options.isLarge? "field-default_large" : "field-default_large"
+
+  div(class = `field-default ${fieldLength}`)
+    .field-default__text-wrapper
+      p(class="field-default__text")= options.fieldName
+
+    if options.subscr 
+      .field-default__check-wrapper
+       .field-default__check-mark.field-default__check-mark_subscr
+
+    input(class="field-default__input" type= options.type placeholder= options.placeholder value= options.value)

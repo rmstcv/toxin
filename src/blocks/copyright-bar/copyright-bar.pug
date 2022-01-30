@@ -1,0 +1,17 @@
+//- Принимает:
+    mobile {bool} -мобильная версия
+    Вызов:
+    +copyright-bar({mobile: true})
+
+mixin copyright-bar(options)
+  - 
+    var mobileCopyright=""
+    mobileCopyright += options.mobile ? "copyright-bar_mobile" : ""
+    var mobileSocial=""
+    mobileSocial += options.mobile ? "copyright-bar__social_mobile" : ""
+  div(class=`copyright-bar ${mobileCopyright}`)
+    .copyright-bar__text Copyright © 2018 Toxin отель. Все права защищены.
+    div(class=`copyright-bar__social ${mobileSocial}`)
+      img(class="copyright-bar__icon"  src=require("/blocks/copyright-bar/" + "twitter" + '.svg') alt="image" loading="lazy" width="24")
+      img(class="copyright-bar__icon"  src=require("/blocks/copyright-bar/" + "facebook" + '.svg') alt="image" loading="lazy" width="24")
+      img(class="copyright-bar__icon"  src=require("/blocks/copyright-bar/" + "instagram" + '.svg') alt="image" loading="lazy" width="24")

@@ -1,0 +1,51 @@
+include ../fields/fields.pug
+include ../copyright-bar/copyright-bar.pug
+
+mixin footer()
+  footer.footer
+    .footer__container
+      .footer__wrapper
+        .footer__logo
+          include ../logo-text/logo-text.pug
+          .footer__logo-descr 
+            .footer__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        nav.footer__text.footer__text_bold НАВИГАЦИЯ
+          ul
+            li
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") О нас
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Новости
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Служба поддержки
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Услуги
+        nav.footer__text.footer__text_bold О НАС
+          ul
+            li
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") О сервисе
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Наша команда
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Вакансии
+            li
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Инвесторы
+        nav.footer__text.footer__text_bold Служба поддержки
+          ul
+            li
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Соглашения
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Сообщества
+            li 
+              a(class="footer__text footer__text_thin" href="/mock-address/change-me") Связь с нами
+        .footer__subscr
+          .footer__text.footer__text_bold Подписка
+          .footer__text Получайте специальные предложения и новости сервиса
+          +field-default({
+            type: "email", 
+            placeholder: "Email",
+            subscr: true,
+            isMedium: true
+          })
+      .footer__divider
+      .footer__copyright
+        +copyright-bar({})

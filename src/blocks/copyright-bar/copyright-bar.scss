@@ -1,0 +1,24 @@
+.copyright-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__text {
+    @include type-body;
+    line-height: 17px;
+  }
+  &__social {
+    width: 112px;
+    display: flex;
+    justify-content: space-between;
+    &_mobile {
+      padding-top: 25px;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  &_mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}

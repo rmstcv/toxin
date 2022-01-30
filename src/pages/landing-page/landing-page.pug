@@ -1,6 +1,7 @@
 include ../../blocks/header/header.pug
 include ../../blocks/landing-image/landing-image.pug
 include ../../blocks/check-in-form/check-in-form.pug
+include ../../blocks/footer/footer.pug
 
 doctype html
 html(lang="ru")
@@ -17,3 +18,4 @@ html(lang="ru")
         .container
           .landing-page__form
             +check-in-form()
+        +footer()

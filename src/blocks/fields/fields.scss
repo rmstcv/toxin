@@ -1,0 +1,53 @@
+.field-default {
+  position: relative;
+  &_small {
+    @include input-small;
+  }
+  &_medium {
+    @include input-medium;
+  }
+  &_large {
+    @include input-large;
+  }
+  &__text {
+    @include type-h3;
+    margin-bottom: 5px;
+  }
+  &__date {
+    @include type-body;
+    line-height: 1.8rem;
+  }
+  &__input {
+    @include input;
+    &:hover {
+      @include input-hover;
+    }
+    &::placeholder {
+      @include input-placeholder;
+    }
+    &::focus {
+      @include input-focus;
+    }
+  }
+  &__check-wrapper {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+  }
+  &__check-mark {
+    &_subscr {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        top: 50%;
+        right: 4px;
+        transform: translate(-50%, -50%);
+        background: no-repeat url("blocks/fields/arrow_forward_black.svg");
+        cursor: pointer;
+      }
+    }
+  }
+}
