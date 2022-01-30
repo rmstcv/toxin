@@ -29,6 +29,14 @@ const optimization = () => {
   return config
 }
 
+const map = () => {
+  const sourceMap;
+  if (isDev) {
+    sourceMap = 'eval-cheap-module-source-map'
+  }
+  return sourceMap;
+}
+
 const jsLoaders = () => {
   const loaders = [{
     loader: 'babel-loader',
@@ -62,7 +70,7 @@ const config = {
     hot: isDev
   },
 
-  devtool: 'eval-cheap-module-source-map',
+  devtool: map(),
 
   plugins: [
     // new HtmlWebpackPlugin({

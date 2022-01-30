@@ -136,6 +136,7 @@ class Dropdown {
       const arr = [];
       const items = this.findElems('.js-dropdown__item-wrapper');
       const data = this.getDropdownData();
+      const dropdownName = this.dropdown.getAttribute('data-dropdown-name');
       let name;
       let value;
 
@@ -144,7 +145,49 @@ class Dropdown {
         value = data[i].value;
         arr[i] = { name, value };
       }
-      dropdownField.innerHTML = `${arr[0].value} ${arr[0].name}, ${arr[1].value} ${arr[1].name}...`;
+
+      if (dropdownName === 'guests') {
+        const totalGuests = +arr[0].value + +arr[1].value;
+        let babes = +arr[2].value;
+        let nameTotalGuests = 'гость';
+        let nameBabes = 'младенца';
+        let divider = ', ';
+        if (totalGuests <= 20) {
+          if (totalGuests === 1) {
+            nameTotalGuests = 'гость';
+          } else if (totalGuests >= 2 && totalGuests <= 4) {
+            nameTotalGuests = 'гостя';
+          } else {
+            nameTotalGuests = 'гостей';
+          }
+        }
+
+        if (totalGuests > 20) {
+          if (totalGuests % 10 === 1) {
+            nameTotalGuests = 'гость';
+          }
+          if (totalGuests % 10 >= 2 && totalGuests % 10 <= 4) {
+            nameTotalGuests = 'гостя';
+          } else {
+            nameTotalGuests = 'гостей';
+          }
+        }
+
+        if (babes === 0) {
+          nameBabes = '';
+          babes = '';
+          divider = '';
+        }
+
+        if (babes === 1) {
+          nameBabes = 'младенец';
+        }
+
+        if (babes > 4) {
+          nameBabes = 'младенцев';
+        }
+        dropdownField.innerHTML = `${totalGuests} ${nameTotalGuests}${divider}${babes} ${nameBabes}`;
+      }
     }
   }
 

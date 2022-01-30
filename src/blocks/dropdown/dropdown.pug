@@ -1,11 +1,11 @@
 //- 
   Принимает:
-    fieldName {string} - подпись дропдауна
-    dropdownName {string} - имя класса обертки, для идетификации дропдауна
+    fieldName {string} - подпись dropdown
+    dropdownName {string} - имя класса обертки, для идентификации dropdown
     defaultItems {array of objects} - в формате: {"name":"взрослые","value":"0", "max":"3","min":"0"}
     defaultContent {string} - текст плэйсхолдера
     confirmPanel {bool} - дополнительно кнопки подтверждения и очистки
-    isSmal {bool} - ширина инпута(isMedium, по умолчанию isLarge)
+    isSmall {bool} - ширина инпута(isMedium, по умолчанию isLarge)
 
     Вызов:
       +dropdown({
@@ -18,7 +18,7 @@
           ],
         defaultContent: "Сколько гостей",
         confirmPanel: true,
-        isSmal: true
+        isSmall: true
       })
 
 mixin dropdown(options)
