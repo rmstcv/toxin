@@ -112,5 +112,3 @@ function addDropdownDate(picker) {
 }
 
 addDropdownDate('.js-date-picker');
-
-export default addDropdownDate;

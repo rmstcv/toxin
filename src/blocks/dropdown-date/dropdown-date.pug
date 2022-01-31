@@ -4,21 +4,15 @@
     fieldNameDouble {string} - имя второго поля input (если стоит флаг isDouble)
     type {string} - тип input (записывается в аттрибут "type")
     placeholder {string} - плейсхолдер input
-    dateIn {string} - дата приезда (!в формате "YYYY, m, D")
-    dateOut {string} - дата отъезда (!в формате "YYYY, m, D")
     isSmall  {bool} - ширина каждого input (isSmall, isMedium, isLarge)
     isDouble {bool} - тип поля (isDouble - 2 отдельных поля(дата приезда и отъезда), если параметр отсутсвует, то по умолчанию 1 общее поле)
-    isOpen {bool} - показать date-picker
     Вызов:
       +dropdown-date({
         fieldName: "DATE DROPDOWN", 
         type: "text", 
         placeholder: "ДД.ММ.ГГГГ",
-        dateIn: "2019, 7, 23",
-        dateOut: "2019, 7, 19",
         isSmall: true,
         isDouble: true,
-        isOpen: true
       })
       Вызов dropdown-date.js - создает экземпляр DatePicker (с dropdown field)
       import addDropdownDate from '../dropdown-date/dropdown-date';
@@ -41,11 +35,7 @@ mixin dropdown-date (options)
             .dropdown-date__check-mark
           input(class=`dropdown-date__input dropdown-date__input-check-out dropdown-date__input_small js-dropdown-date__input-check-out` type="text" placeholder= options.placeholder value="" disabled)
       div(class=`dropdown-date__date-picker-double js-dropdown-date__date-picker-double`)
-        +addAirDatePicker({
-          dateIn: options.dateIn,
-          dateOut: options.dateOut,
-          isOpen: options.isOpen
-        })
+        +addAirDatePicker()
   else 
     div(class=`dropdown-date dropdown-date_medium js-dropdown-date`)
       .dropdown-date__single
@@ -54,9 +44,5 @@ mixin dropdown-date (options)
           .dropdown-date__check-mark
         input(class=`dropdown-date__input dropdown-date__input-check js-dropdown-date__input-check` type="text" placeholder= options.placeholder value="" disabled)
         div(class=`dropdown-date__date-picker-single js-dropdown-date__date-picker-single`)
-          +addAirDatePicker({
-            dateIn: options.dateIn,
-            dateOut: options.dateOut,
-            isOpen: options.isOpen
-          })
+          +addAirDatePicker()
     

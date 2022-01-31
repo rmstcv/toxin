@@ -203,3 +203,11 @@
 .air-datepicker-cell.-selected-.-current- {
   background: $color-third;
 }
+
+.dropdown-date__date-picker-single .air-datepicker--content {
+  --adp-day-cell-height: inherit;
+}
+
+.dropdown-date__date-picker-single .air-datepicker-body--cells.-days- {
+  height: auto;
+}
