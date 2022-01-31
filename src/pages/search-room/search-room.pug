@@ -1,4 +1,6 @@
 include ../../blocks/header/header.pug
+include ../../blocks/footer/footer.pug
+include ../../blocks/dropdown-date/dropdown-date.pug
 
 doctype html
 html(lang="ru")
@@ -8,5 +10,18 @@ html(lang="ru")
     title Toxin
     
   body
-    .container
-      +header({logged: true})
+    .search-room
+      .search-room-container
+        +header({logged: false})
+        .container
+          .search-room-content
+            .search-room__filter
+              +dropdown-date({
+                fieldName: "даты пребывания в отеле", 
+                type: "text", 
+                placeholder: "ДД.ММ.ГГГГ",
+                dateIn: "",
+                dateOut: "",
+              })
+            .search-room__rooms
+        +footer()

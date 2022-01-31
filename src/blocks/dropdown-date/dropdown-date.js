@@ -90,12 +90,8 @@ class DatePicker {
   }
 
   initDatePicker() {
-    const initDateInDefault = this.airDatepickerItem.getAttribute('data-dateIn');
-    const initDateOutDefault = this.airDatepickerItem.getAttribute('data-dateOut');
-    localStorage.removeItem('dateIn');
-    localStorage.removeItem('dateOut');
     this.showDatePicker();
-    this.showDates(initDateInDefault, initDateOutDefault);
+    this.getDates();
   }
 }
 
@@ -115,6 +111,6 @@ function addDropdownDate(picker) {
   return DropDate;
 }
 
-addDropdownDate('.field-wrapper .js-date-picker');
+addDropdownDate('.js-date-picker');
 
 export default addDropdownDate;

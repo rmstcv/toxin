@@ -27,4 +27,5 @@ mixin check-in-form()
         confirmPanel: true
       })
     .check-in-form__button
-      +simple-button({type: "long", text: "ПОДОБРАТЬ НОМЕР"})
+      form(action="search-room.html")
+        +simple-button({type: "long", text: "ПОДОБРАТЬ НОМЕР"})

@@ -32,8 +32,8 @@ function createAirDatePicker(...args) {
       airDatepickerItem.classList.add('date-picker_hide');
     },
   };
-  let initDateIn = airDatepickerItem.getAttribute('data-dateIn');
-  let initDateOut = airDatepickerItem.getAttribute('data-dateOut');
+  let initDateIn = localStorage.getItem('dateIn');
+  let initDateOut = localStorage.getItem('dateOut');
   if (!initDateIn) initDateIn = '';
   if (!initDateOut) initDateOut = '';
   const dp = new AirDatepicker(airDatepickerItem, {

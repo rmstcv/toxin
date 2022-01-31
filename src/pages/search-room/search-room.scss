@@ -1,0 +1,10 @@
+.search-room-container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.search-room {
+  &__filter {
+    margin-top: 100px;
+  }
+}
