@@ -1,6 +1,7 @@
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/dropdown-date/dropdown-date.pug
+include ../../blocks/dropdown/dropdown.pug
 
 doctype html
 html(lang="ru")
@@ -20,6 +21,17 @@ html(lang="ru")
                 fieldName: "даты пребывания в отеле", 
                 type: "text", 
                 placeholder: "ДД.ММ.ГГГГ",
+              })
+              +dropdown({
+                fieldName: "ГОСТИ",
+                dropdownName: "guests",
+                defaultItems: [
+                  {"name":"взрослые","value":"0", "max":"3","min":"0"},
+                  {"name":"дети","value":"0","max":"3","min":"0"},
+                  {"name":"младенцы","value":"0", "max":"3","min":"0"}
+                ],
+                defaultContent: "Сколько гостей",
+                confirmPanel: true,
               })
             .search-room__rooms
         +footer()

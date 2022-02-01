@@ -24,7 +24,7 @@
 mixin dropdown(options)
   - 
     var fieldLength = ""
-    fieldLength += options.isSmall ? "dropdown_small" : options.isMedium ? "dropdown_medium" : "dropdown_large"
+    fieldLength += options.isSmall ? "dropdown_small" : options.isLarge ? "dropdown_large" : "dropdown_medium"
     var content = ""
     content += options.defaultContent ? options.defaultContent : `${options.defaultItems[0].value} ${options.defaultItems[0].name}, ${options.defaultItems[1].value} ${options.defaultItems[1].name}...`
   div(class = `${fieldLength} dropdown js-dropdown`  data-dropdown-name=options.dropdownName data-dropdown-content=options.defaultItems data-dropdown-content-default=content)

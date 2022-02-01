@@ -30,11 +30,9 @@ const optimization = () => {
 }
 
 const map = () => {
-  const sourceMap;
   if (isDev) {
-    sourceMap = 'eval-cheap-module-source-map'
+    return 'eval-cheap-module-source-map'
   }
-  return sourceMap;
 }
 
 const jsLoaders = () => {
