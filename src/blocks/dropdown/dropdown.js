@@ -93,6 +93,7 @@ class Dropdown {
        || item.classList.contains('js-dropdown__confirm-button_admit')) {
       content.classList.toggle('dropdown__content-wrapper_show');
       field.classList.toggle('dropdown__field_darker');
+      field.classList.toggle('dropdown__field_no-border-radius');
       this.checkExtrimValues();
     }
   }
