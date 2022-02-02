@@ -18,14 +18,19 @@ class Dropdown {
     if (!localStorage.getItem('guests')) {
       localStorage.setItem('guests', JSON.stringify(data));
     }
-    this.addTextToField(document.querySelector('.dropdown__counter'));
+    this.addTextToField(document.querySelector('.js-dropdown__counter'));
     this.checkExtrimValues();
     this.addDropdownHandler();
   }
 
-  static getDropdownData() {
-    // const data = JSON.parse(this.dropdown.getAttribute('data-dropdown-content'));
-    const data = JSON.parse(localStorage.getItem('guests'));
+  getDropdownData() {
+    let data;
+    try {
+      data = localStorage.getItem('guests');
+    } catch {
+      data = this.dropdown.getAttribute('data-dropdown-content');
+    }
+    data = JSON.parse(data);
     return data;
   }
 
@@ -62,7 +67,7 @@ class Dropdown {
   checkExtrimValues() {
     const elemsNext = this.findElems('.js-dropdown__counter_next');
     const elemsPrev = this.findElems('.js-dropdown__counter_prev');
-    const data = Dropdown.getDropdownData();
+    const data = this.getDropdownData();
     for (let i = 0; i < elemsPrev.length; i += 1) {
       if (+data[i].value === +data[i].min) {
         elemsPrev[i].classList.add('dropdown__counter_extreme-value');
@@ -83,7 +88,9 @@ class Dropdown {
   dropdownHide(item) {
     const content = this.findElem('.js-dropdown__content-wrapper');
     const field = this.findElem('.js-dropdown__field');
-    if (item.classList.contains('dropdown__check-wrapper') || item.classList.contains('dropdown__check-mark')) {
+    if (item.classList.contains('dropdown__check-wrapper')
+       || item.classList.contains('dropdown__check-mark')
+       || item.classList.contains('js-dropdown__confirm-button_admit')) {
       content.classList.toggle('dropdown__content-wrapper_show');
       field.classList.toggle('dropdown__field_darker');
       this.checkExtrimValues();
@@ -91,9 +98,11 @@ class Dropdown {
   }
 
   itemIterator(item) {
-    if (item.classList.contains('dropdown__counter') || item.classList.contains('dropdown__check-mark') || item.classList.contains('dropdown__check-wrapper')) {
+    if (item.classList.contains('dropdown__counter')
+       || item.classList.contains('dropdown__check-mark')
+       || item.classList.contains('dropdown__check-wrapper')) {
       let elem = 0;
-      const data = Dropdown.getDropdownData();
+      const data = this.getDropdownData();
       const allItems = this.findElems('.js-dropdown__item-wrapper');
       const counterItems = this.findElems('.js-dropdown__counter-value');
 
@@ -129,7 +138,7 @@ class Dropdown {
   dropdownClearValue(item) {
     if (item.classList.contains('dropdown__confirm-button_clear')) {
       const elems = this.findElems('.js-dropdown__item-wrapper');
-      const data = Dropdown.getDropdownData();
+      const data = this.getDropdownData();
       const counterElems = this.findElems('.js-dropdown__counter-value');
 
       for (let i = 0; i < elems.length; i += 1) {
@@ -147,7 +156,7 @@ class Dropdown {
       const dropdownField = this.findElem('.js-dropdown__preview-wrapper');
       const arr = [];
       const items = this.findElems('.js-dropdown__item-wrapper');
-      const data = Dropdown.getDropdownData();
+      const data = this.getDropdownData();
       const dropdownName = this.dropdown.getAttribute('data-dropdown-name');
       let name;
       let value;
@@ -209,10 +218,12 @@ class Dropdown {
   }
 
   hideClearButton(item) {
-    if (item.classList.contains('dropdown__counter') || item.classList.contains('dropdown__confirm-button_clear') || item.classList.contains('dropdown__check-wrapper')) {
+    if (item.classList.contains('dropdown__counter')
+       || item.classList.contains('dropdown__confirm-button_clear')
+       || item.classList.contains('dropdown__check-wrapper')) {
       const confirmPanel = this.findElem('.js-dropdown__confirm-panel');
       const clearButton = this.findElem('.js-dropdown__confirm-button_clear');
-      const data = Dropdown.getDropdownData();
+      const data = this.getDropdownData();
       const dropdownField = this.findElem('.js-dropdown__preview-wrapper');
       let sumItemsValues = 0;
       if (data) {

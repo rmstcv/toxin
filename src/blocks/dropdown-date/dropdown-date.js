@@ -43,8 +43,18 @@ class DatePicker {
   }
 
   getDates() {
-    const dateCheckIn = localStorage.getItem('dateIn');
-    const dateCheckOut = localStorage.getItem('dateOut');
+    let dateCheckIn;
+    let dateCheckOut;
+    try {
+      dateCheckIn = localStorage.getItem('dateIn');
+    } catch {
+      dateCheckIn = null;
+    }
+    try {
+      dateCheckOut = localStorage.getItem('dateOut');
+    } catch {
+      dateCheckOut = null;
+    }
     this.showDates(dateCheckIn, dateCheckOut);
   }
 
@@ -97,18 +107,18 @@ class DatePicker {
 
 function addDropdownDate(picker) {
   const airDatepickers = document.querySelectorAll(picker);
-  let DropDate;
+  let dropDate;
   airDatepickers.forEach((airDatepickerItem) => {
-    DropDate = new DatePicker(airDatepickerItem);
+    dropDate = new DatePicker(airDatepickerItem);
     const args = [
       airDatepickerItem,
       DatePicker.setDates,
-      DropDate.showDates,
+      dropDate.showDates,
     ];
     createAirDatePicker(...args);
-    DropDate.initDatePicker();
+    dropDate.initDatePicker();
   });
-  return DropDate;
+  return dropDate;
 }
 
 addDropdownDate('.js-date-picker');
