@@ -1,0 +1,88 @@
+.checkbox {
+  position: relative;
+}
+
+.checkbox-header {
+  @include type-h3;
+  position: relative;
+  @include input-medium;
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+  &__check-wrapper {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+  }
+  &__check-mark {
+    @include dropdown-mark;
+    z-index: -1;
+    &_active {
+      border: none;
+      border-right: 2px solid $color-dark-50;
+      border-top: 2px solid $color-dark-50;
+      bottom: 40%;
+    }
+  }
+}
+
+.checkbox-list {
+  display: none;
+  &_active {
+    display: block;
+  }
+  &_dropped {
+    position: absolute;
+    top: 30px;
+    z-index: 1;
+  }
+}
+
+.checkbox-button {
+  margin-top: 12px;
+  &:first-child {
+    margin-top: 0;
+  }
+  &__custom {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    &:checked + label .checkbox-button__icon-out {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $color-second;
+      border-radius: 4px;
+    }
+    &:checked + label .checkbox-button__icon-in {
+      @include checkbox-mark-in;
+    }
+  }
+  &__label {
+    z-index: -1;
+    position: relative;
+    display: flex;
+  }
+  .checkbox-button__icon-out {
+    @include checkbox-mark-out;
+  }
+  &__content {
+    font-weight: normal;
+    font-size: $size-body;
+    color: $color-dark-50;
+    line-height: 1.25rem;
+    &_rich {
+      font-weight: 700;
+      color: $color-dark-75;
+    }
+  }
+  &__descr {
+    @include type-h3;
+    color: $color-dark-50;
+    font-weight: normal;
+    margin-top: 5px;
+  }
+}

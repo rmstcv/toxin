@@ -3,6 +3,7 @@ include ../../blocks/footer/footer.pug
 include ../../blocks/dropdown-date/dropdown-date.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/range-slider/range-slider.pug
+include ../../blocks/checkboxList/checkboxList.pug
 
 doctype html
 html(lang="ru")
@@ -35,5 +36,35 @@ html(lang="ru")
                 confirmPanel: true,
               })
               +range-slider()
+              +checkbox({
+                item: [
+                  {content: "Mожно курить", name: "checkbox-house-rules"},
+                  {content: "Mожно с питомцами", name: "checkbox-house-rules"},
+                  {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox-house-rules"}
+                ],
+                name: "ПРАВИЛА ДОМА",
+              })
+              +dropdown({
+              fieldName: "УДОБСТВА НОМЕРА",
+              dropdownName: "facilities",
+              defaultItems: [
+                {"name":"спальни","value":"2","max":"3","min":"1"},
+                {"name":"кровати","value":"2","max":"3","min":"1"},
+                {"name":"ванные комнаты","value":"0","max":"3","min":"0"}
+              ],
+              isMedium: true
+            })
+              +checkbox({
+                item: [
+                  {content: "Завтрак", name: "checkbox-extra-facilities"},
+                  {content: "Письменный стол", name: "checkbox-extra-facilities"},
+                  {content: "Стул для кормления", name: "checkbox-extra-facilities"},
+                  {content: "Кроватка", name: "checkbox-extra-facilities"},
+                  {content: "Телевизор", name: "checkbox-extra-facilities"},
+                  {content: "Шампунь", name: "checkbox-extra-facilities"}
+                ],
+                isDropped: true,
+                name: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА'
+              })        
             .search-room__rooms
         +footer()

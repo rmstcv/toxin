@@ -6,5 +6,9 @@
 .search-room {
   &__filter {
     margin-top: 100px;
+    @include input-medium;
+  }
+  &__filter > div {
+    margin-top: 30px;
   }
 }
