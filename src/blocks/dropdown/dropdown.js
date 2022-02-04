@@ -1,6 +1,7 @@
 class Dropdown {
   constructor(dropdown) {
     this.dropdown = dropdown;
+    this.dropdownName = dropdown.getAttribute('data-dropdown-name');
   }
 
   addDropdownHandler() {
@@ -15,8 +16,8 @@ class Dropdown {
 
   initDropdown() {
     const data = JSON.parse(this.dropdown.getAttribute('data-dropdown-content'));
-    if (!localStorage.getItem('guests')) {
-      localStorage.setItem('guests', JSON.stringify(data));
+    if (!localStorage.getItem(this.dropdownName)) {
+      localStorage.setItem(this.dropdownName, JSON.stringify(data));
     }
     this.addTextToField(document.querySelector('.js-dropdown__counter'));
     this.checkExtrimValues();
@@ -26,7 +27,7 @@ class Dropdown {
   getDropdownData() {
     let data;
     try {
-      data = localStorage.getItem('guests');
+      data = localStorage.getItem(this.dropdownName);
     } catch {
       data = this.dropdown.getAttribute('data-dropdown-content');
     }
@@ -37,7 +38,7 @@ class Dropdown {
   setDropdownData(data) {
     const dataNew = data;
     this.dropdown.setAttribute('data-dropdown-content', JSON.stringify(dataNew));
-    localStorage.setItem('guests', JSON.stringify(dataNew));
+    localStorage.setItem(this.dropdownName, JSON.stringify(dataNew));
   }
 
   findElems(elemsClass) {
@@ -158,7 +159,6 @@ class Dropdown {
       const arr = [];
       const items = this.findElems('.js-dropdown__item-wrapper');
       const data = this.getDropdownData();
-      const dropdownName = this.dropdown.getAttribute('data-dropdown-name');
       let name;
       let value;
 
@@ -168,7 +168,7 @@ class Dropdown {
         arr[i] = { name, value };
       }
 
-      if (dropdownName === 'guests') {
+      if (this.dropdownName === 'guests') {
         const totalGuests = +arr[0].value + +arr[1].value;
         let babes = +arr[2].value;
         let nameTotalGuests = 'гость';
@@ -215,6 +215,23 @@ class Dropdown {
           dropdownField.innerHTML = this.dropdown.getAttribute('data-dropdown-content-default');
         }
       }
+
+      if (this.dropdownName === 'facilities') {
+        const bedrooms = +arr[0].value;
+        const beds = +arr[1].value;
+        let nameBedrooms = 'спальни';
+        let nameBeds = 'кровати';
+
+        if (bedrooms === 1) {
+          nameBedrooms = 'спальня';
+        }
+
+        if (beds === 1) {
+          nameBeds = 'кровать';
+        }
+
+        dropdownField.innerHTML = `${bedrooms} ${nameBedrooms}, ${beds} ${nameBeds}...`;
+      }
     }
   }
 
@@ -245,7 +262,6 @@ class Dropdown {
 
 function addDropdowns() {
   const dropdowns = document.querySelectorAll('.js-dropdown');
-
   dropdowns.forEach((dropdownItem) => {
     let dropdown = dropdownItem;
     dropdown = new Dropdown(dropdown);
