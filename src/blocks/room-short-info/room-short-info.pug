@@ -1,0 +1,14 @@
+//- Принимает:
+//-   room {string} - номер комнаты
+//- Вызов:
+        +roomShortInfo({room: '808'})
+
+mixin roomShortInfo(options)
+  div(class ='room-short-info' data-room=options.room)
+    div
+      span(class = "room-short-info__num") №
+      span(class = "room-short-info__room") 
+      span(class = "room-short-info__class")
+    div
+      span(class = "room-short-info__price")
+      span(class = "room-short-info__text") в сутки

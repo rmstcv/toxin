@@ -1,0 +1,20 @@
+//- 
+  Принимает:
+  room {string} - номер комнаты
+  Вызов:
+    +card({room: '840'})
+
+include ../room-short-info/room-short-info.pug
+include ../button-rate/button-rate.pug
+include ../swiper/swiper.pug
+
+mixin card (options)
+  div(class = "room-card" data-room = options.room)
+    .room-card__image
+      +swiper()
+    .room-card__info
+      +roomShortInfo({room: ''})
+      .room-card__divider
+      .room-card__rate-wrapper
+        +rate-button({})
+        .room-card__rate-info

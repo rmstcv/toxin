@@ -73,9 +73,19 @@
 }
 
 .noUi-handle.noUi-handle-lower {
-  right: -11px;
+  right: -8px;
 }
 
 .noUi-handle.noUi-handle-upper {
-  right: -2px;
+  right: -8px;
+}
+
+.noUi-base,
+.noUi-connects {
+  width: 98%;
+}
+
+.noUi-connect,
+.noUi-origin {
+  width: 98%;
 }

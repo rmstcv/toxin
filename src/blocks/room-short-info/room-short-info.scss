@@ -1,0 +1,32 @@
+.room-short-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  &__num {
+    @include type-h1;
+    font-size: 14px;
+  }
+  &__room {
+    @include type-h1;
+    margin-left: 5px;
+  }
+  &__class {
+    @include type-h3;
+    font-weight: normal;
+    margin-left: 5px;
+    color: $color-second;
+    font-weight: 700;
+  }
+  &__price {
+    @include type-h3;
+    color: $color-dark-50;
+    font-size: 1.4rem;
+  }
+  &__text {
+    @include type-h3;
+    text-transform: inherit;
+    margin-left: 5px;
+    color: $color-dark-50;
+    font-weight: 500;
+  }
+}

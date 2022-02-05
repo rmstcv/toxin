@@ -4,6 +4,7 @@ include ../../blocks/dropdown-date/dropdown-date.pug
 include ../../blocks/dropdown/dropdown.pug
 include ../../blocks/range-slider/range-slider.pug
 include ../../blocks/checkboxList/checkboxList.pug
+include ../../blocks/rooms-catalog/rooms-catalog.pug
 
 doctype html
 html(lang="ru")
@@ -67,4 +68,6 @@ html(lang="ru")
                 name: 'ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА'
               })        
             .search-room__rooms
+              .search-room__text Номера, которые мы для вас подобрали
+              +rooms-catalog()
         +footer()

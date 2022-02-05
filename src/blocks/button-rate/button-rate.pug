@@ -1,0 +1,15 @@
+//- Принимает:
+//-   num {string} - количество звезд. для динамической отрисовки оставлять пустой объект {}
+//- Вызов:
+        +rate-button({num})
+
+mixin rate-button(options)
+  div(class='rate-buttons' data-rate= options.rate)
+    - var rated = 0;
+        while rated < options.rate
+          .rate-buttons__item.rate-buttons__item_colored
+          - rated++
+    - var unrated = 0;
+        while unrated < (5 - options.rate)
+          .rate-buttons__item.rate-buttons__item_uncolored
+          - unrated++
