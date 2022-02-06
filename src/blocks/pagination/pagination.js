@@ -5,8 +5,12 @@ $(() => {
   $('.pagination').pajinatify();
 });
 
-$('.pagination').pajinatify({
-  onChange(currentPage) {
-    console.log(currentPage);
-  },
-});
+const paginationAction = (action) => {
+  $('.pagination').pajinatify({
+    onChange(currentPage) {
+      action(currentPage);
+    },
+  });
+};
+
+export default paginationAction;

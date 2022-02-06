@@ -1,10 +1,10 @@
 .room-short-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &__num {
     @include type-h1;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   &__room {
     @include type-h1;
@@ -20,7 +20,7 @@
   &__price {
     @include type-h3;
     color: $color-dark-50;
-    font-size: 1.4rem;
+    font-size: 0.875rem;
   }
   &__text {
     @include type-h3;

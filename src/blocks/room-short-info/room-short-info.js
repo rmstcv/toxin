@@ -1,12 +1,19 @@
 import addSpace from '../../libs/add-spaces';
-import getData from '../../libs/get-json-data';
 
-async function insertRoomInfo(room, elem) {
-  const data = await getData('data.json', room);
+function insertRoomInfo(data, elem) {
   const roomNode = elem;
-  roomNode.firstElementChild.children[1].innerHTML = data.room;
-  roomNode.firstElementChild.children[2].innerHTML = data.class;
-  roomNode.lastElementChild.children[0].innerHTML = `${addSpace(data.price)}&#8381;`;
+  roomNode.innerHTML = `
+    <div class ="room-short-info" data-room=${data.room}>
+      <div>
+        <span class = "room-short-info__num">№</span>
+        <span class = "room-short-info__room">${data.room}</span>
+        <span class = "room-short-info__class">${data.class}</span>
+      </div>
+      <div>
+        <span class = "room-short-info__price">${addSpace(data.price)}&#8381</span>
+        <span class = "room-short-info__text">в сутки</span>
+      </div>
+    </div>
+  `;
 }
-
 export default insertRoomInfo;

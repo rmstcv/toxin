@@ -1,11 +1,11 @@
 include ../pagination/pagination.pug
-include ../card/card.pug
+//- include ../card/card.pug
 
 mixin rooms-catalog()
   .rooms-catalog
     .rooms-catalog__rooms
-      +card({room: '840'})
-    +pagination({
-      dataTotalCount: 180,
-      dataTake: 12
-    })
+    .rooms-catalog__pagination
+      +pagination({
+        dataTotalCount: 180,
+        dataTake: 12
+      })

@@ -1,0 +1,14 @@
+.rooms-catalog {
+  &__rooms {
+    width: 824px;
+    min-height: 1102.8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40.5px;
+  }
+}

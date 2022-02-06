@@ -20,6 +20,13 @@ async function getJsonData(url, room) {
   } catch {
     roomInfo = err;
   }
+  const imgs = [];
+  let img;
+  for (let i = 0; i < 4; i += 1) {
+    img = `assets/images/rooms/room${roomInfo.room}.jpg`;
+    imgs.push(img);
+  }
+  roomInfo.images = imgs;
   return roomInfo;
 }
 

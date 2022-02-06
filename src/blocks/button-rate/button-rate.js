@@ -1,18 +1,16 @@
-function addStars(elem) {
-  const starElem = elem;
-  const stars = +starElem.getAttribute('data-rate');
-  for (let i = 0; i < elem.children.length; i += 1) {
-    elem.children[i].remove();
-  }
+function addStars(elem, stars) {
+  const starsElem = document.createElement('div');
+  starsElem.classList.add('rate-buttons');
+  elem.append(starsElem);
   for (let i = 0; i < stars; i += 1) {
     const star = document.createElement('div');
     star.classList.add('rate-buttons__item', 'rate-buttons__item_colored');
-    elem.append(star);
+    starsElem.append(star);
   }
   for (let i = 0; i < (5 - stars); i += 1) {
     const star = document.createElement('div');
     star.classList.add('rate-buttons__item', 'rate-buttons__item_uncolored');
-    elem.append(star);
+    starsElem.append(star);
   }
 }
 
