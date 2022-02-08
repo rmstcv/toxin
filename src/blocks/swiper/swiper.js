@@ -11,6 +11,7 @@ function swiper() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    allowTouchMove: false,
   });
   return swiperSlider;
 }

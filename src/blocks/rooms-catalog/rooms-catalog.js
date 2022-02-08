@@ -57,6 +57,20 @@ function addSliderHandle() {
   });
 }
 
+function addCardsListener() {
+  const roomslist = document.querySelector('.rooms-catalog__rooms');
+  const stopClasses = ['swiper-button-next', 'swiper-button-prev'];
+  roomslist.addEventListener('click', (e) => {
+    if (!stopClasses.some((stopClass) => e.target.classList.contains(stopClass))) {
+      if (e.target.closest('.room-card')) {
+        const roomId = e.target.closest('.room-card').getAttribute('data-room-id');
+        localStorage.setItem('room', roomId);
+      }
+    }
+  });
+}
+
 changeCards(1);
 addSliderHandle();
 paginationAction(changeCards);
+addCardsListener();

@@ -63,6 +63,7 @@ function createCard(parent, room) {
   `;
   const roomCard = document.createElement('div');
   roomCard.classList.add('room-card');
+  roomCard.setAttribute('data-room-id', room);
   roomCard.innerHTML = cardContent;
   parent.append(roomCard);
   swiper();
