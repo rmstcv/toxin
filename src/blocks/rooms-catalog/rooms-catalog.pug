@@ -1,9 +1,8 @@
 include ../pagination/pagination.pug
-//- include ../card/card.pug
 
 mixin rooms-catalog()
   .rooms-catalog
-    .rooms-catalog__rooms
+    .rooms-catalog__rooms.js-rooms-catalog__rooms
     .rooms-catalog__pagination
       +pagination({
         dataTotalCount: 180,

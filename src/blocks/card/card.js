@@ -13,7 +13,7 @@ class Card {
     const elems = document.querySelectorAll(elemClass);
     let elem;
     for (let i = 0; i < elems.length; i += 1) {
-      if (elems[i].closest('.room-card') === this.cardElem) {
+      if (elems[i].closest('.js-room-card') === this.cardElem) {
         elem = elems[i];
       }
     }
@@ -30,12 +30,12 @@ class Card {
   }
 
   addStarsRate(data) {
-    const star = this.findElem('.room-card__rate-wrapper');
+    const star = this.findElem('.js-room-card__rate-wrapper');
     addStars(star, data.stars);
   }
 
   addRoomRate(data) {
-    const rate = this.findElem('.room-card__rate-info');
+    const rate = this.findElem('.js-room-card__rate-info');
     rate.innerHTML = `${data.reviews} <span>Отзывов</span>`;
   }
 
@@ -56,13 +56,13 @@ function createCard(parent, room) {
       <div class = "room-card__info-wrapper">
         <div class = "room-card__info"></div>
         <div class = "room-card__divider"></div>
-        <div class = "room-card__rate-wrapper">
-          <div class = "room-card__rate-info"></div>
+        <div class = "room-card__rate-wrapper js-room-card__rate-wrapper">
+          <div class = "room-card__rate-info js-room-card__rate-info"></div>
         </div>
       </div>
   `;
   const roomCard = document.createElement('div');
-  roomCard.classList.add('room-card');
+  roomCard.classList.add('room-card', 'js-room-card');
   roomCard.setAttribute('data-room-id', room);
   roomCard.innerHTML = cardContent;
   parent.append(roomCard);

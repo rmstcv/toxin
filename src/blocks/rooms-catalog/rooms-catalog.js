@@ -2,7 +2,7 @@ import paginationAction from '../pagination/pagination';
 import createCard from '../card/card';
 
 function getSliderValues() {
-  const slider = document.querySelector('.range-slider__slider');
+  const slider = document.querySelector('.js-range-slider__slider');
   const values = slider.noUiSlider.get();
   return values;
 }
@@ -23,7 +23,7 @@ async function changeCards(n) {
     reviews: '0',
     images: [''],
   };
-  const catalogPage = document.querySelector('.rooms-catalog__rooms');
+  const catalogPage = document.querySelector('.js-rooms-catalog__rooms');
   catalogPage.innerHTML = '';
   try {
     data = await fetch('data.json');
@@ -50,7 +50,7 @@ async function changeCards(n) {
 }
 
 function addSliderHandle() {
-  const slider = document.querySelector('.range-slider__slider');
+  const slider = document.querySelector('.js-range-slider__slider');
   slider.noUiSlider.on('end', () => {
     changeCards(1)
       .then((resolve) => resetPagination(resolve));
@@ -58,12 +58,12 @@ function addSliderHandle() {
 }
 
 function addCardsListener() {
-  const roomslist = document.querySelector('.rooms-catalog__rooms');
+  const roomslist = document.querySelector('.js-rooms-catalog__rooms');
   const stopClasses = ['swiper-button-next', 'swiper-button-prev'];
   roomslist.addEventListener('click', (e) => {
     if (!stopClasses.some((stopClass) => e.target.classList.contains(stopClass))) {
-      if (e.target.closest('.room-card')) {
-        const roomId = e.target.closest('.room-card').getAttribute('data-room-id');
+      if (e.target.closest('.js-room-card')) {
+        const roomId = e.target.closest('.js-room-card').getAttribute('data-room-id');
         localStorage.setItem('room', roomId);
       }
     }

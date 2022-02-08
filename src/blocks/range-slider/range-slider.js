@@ -8,8 +8,8 @@ class RangeSlider {
     this.startMax = 10000;
     this.min = 0;
     this.max = 15000;
-    this.valuesAreaMin = document.querySelector('.range-slider__value-min');
-    this.valuesAreaMax = document.querySelector('.range-slider__value-max');
+    this.valuesAreaMin = document.querySelector('.js-range-slider__value-min');
+    this.valuesAreaMax = document.querySelector('.js-range-slider__value-max');
   }
 
   init() {
@@ -44,7 +44,7 @@ class RangeSlider {
 }
 
 function addRangeSlider() {
-  const rangeSlider = document.querySelector('.range-slider__slider');
+  const rangeSlider = document.querySelector('.js-range-slider__slider');
   RangeSlider.prototype.addSpaces = addSpaces;
   const slider = new RangeSlider(rangeSlider);
   slider.init();

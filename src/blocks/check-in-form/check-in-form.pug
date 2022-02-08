@@ -1,8 +1,14 @@
+//- 
+  Принимает:
+  url {string} - url перехода
+  Вызов:
+    +check-in-form("search-room.html")
+
 include ../dropdown-date/dropdown-date.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin check-in-form()
+mixin check-in-form(url)
   .check-in-form
     .check-in-form__title Найдём номера под ваши пожелания
     .check-in-form__dates
@@ -28,5 +34,5 @@ mixin check-in-form()
         confirmPanel: true
       })
     .check-in-form__button
-      form(action="search-room.html")
+      form(action=url)
         +simple-button({type: "long", text: "ПОДОБРАТЬ НОМЕР"})
