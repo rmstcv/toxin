@@ -1,9 +1,14 @@
 .landing-page {
-  &__form {
-    margin-top: 70px;
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
-  &__footer {
-    margin-top: 388px;
+  &__form {
+    position: absolute;
+    top: 140px;
   }
 }
 

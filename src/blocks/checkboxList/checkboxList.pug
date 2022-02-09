@@ -1,21 +1,22 @@
 //- 
   Принимает:
-    content {string} - контент чекбокса   
+    content {string} - контент чекбокса (заголовок)
     extraContent {string} - дополнительная информация, под основным контентом
     item: [{name:""}] {string} - значение аттрибута <input name="name">
+    descr: {string} - описание чекбокса
     isDropped {bool} - открытый или закрытый чекбокс
     name {string} - подпись чекбокса
     isRich {bool} - жирный текст чекбокса
   Вызов:
     +checkbox({
-          item: [
-            {content: "Завтрак", name: "checkbox buttons"},
-            {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox buttons"},
-          ],
-          isDropped: true,
-          name: 'expandable checkbox list',
-          isRich: true
-        }) 
+      item: [
+        {content: "Завтрак", name: "checkbox buttons"},
+        {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox buttons"},
+      ],
+      isDropped: true,
+      name: 'expandable checkbox list',
+      isRich: true
+    }) 
 
 
 mixin checkbox(options)

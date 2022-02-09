@@ -8,8 +8,12 @@ function getSliderValues() {
 }
 
 function resetPagination(cards) {
+  let cardsNum = cards;
+  if (cards === 0) {
+    cardsNum = 1;
+  }
   $(() => {
-    $('.pagination').pajinatify('set', 1, cards);
+    $('.pagination').pajinatify('set', 1, cardsNum);
   });
 }
 
@@ -21,7 +25,11 @@ function addPagesCounter(firstCard, endCard, total) {
   } else {
     roomsTotal.innerHTML = ' 100+ ';
   }
-  roomsOnPage.innerHTML = `${firstCard} &mdash; ${endCard} `;
+  if (endCard === 0) {
+    roomsOnPage.innerHTML = '0 &mdash; 0 ';
+  } else {
+    roomsOnPage.innerHTML = `${firstCard} &mdash; ${endCard} `;
+  }
 }
 
 async function changeCards(n) {

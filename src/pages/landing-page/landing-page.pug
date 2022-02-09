@@ -14,7 +14,8 @@ html(lang="ru")
     .landing-page
       .landing-page-container
         +landing-image()
-        +header({logged: false})
+        .landing-page__header
+          +header({logged: false})
         .container
           .landing-page__form
             +check-in-form("search-room.html")

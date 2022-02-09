@@ -45,6 +45,14 @@ html(lang="ru")
                 ],
                 name: "ПРАВИЛА ДОМА",
               })
+              +checkbox({
+                item: [
+                  {content: "Широкий коридор", descr: "Ширина коридоров в номере не менее 91 см.", name: "accessibility"},
+                  {content: "Помощник для инвалидов", descr: "На 1 этаже вас встретит специалист  и проводит до номера.", name: "accessibility"},
+                ],
+                name: 'ДОСТУПНОСТЬ',
+                isRich: true
+              })  
               +dropdown({
               fieldName: "УДОБСТВА НОМЕРА",
               dropdownName: "facilities",
