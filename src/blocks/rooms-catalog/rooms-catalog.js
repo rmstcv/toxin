@@ -13,6 +13,17 @@ function resetPagination(cards) {
   });
 }
 
+function addPagesCounter(firstCard, endCard, total) {
+  const roomsOnPage = document.querySelector('.js-rooms-catalog__rooms-on-page');
+  const roomsTotal = document.querySelector('.js-rooms-catalog__pages-total');
+  if (total < 100) {
+    roomsTotal.innerHTML = ` ${total} `;
+  } else {
+    roomsTotal.innerHTML = ' 100+ ';
+  }
+  roomsOnPage.innerHTML = `${firstCard} &mdash; ${endCard} `;
+}
+
 async function changeCards(n) {
   let data;
   const err = {
@@ -40,12 +51,15 @@ async function changeCards(n) {
     }
   }
   const firstCard = (n - 1) * 12;
-  const endCard = n * 12;
+  let endCard = n * 12;
   for (let i = firstCard; i < endCard; i += 1) {
     if (newDataIndex[i]) {
       createCard(catalogPage, data[newDataIndex[i] - 1].room);
+    } else {
+      endCard = i;
     }
   }
+  addPagesCounter(firstCard + 1, endCard, newDataIndex.length);
   return newDataIndex.length;
 }
 
@@ -64,7 +78,12 @@ function addCardsListener() {
     if (!stopClasses.some((stopClass) => e.target.classList.contains(stopClass))) {
       if (e.target.closest('.js-room-card')) {
         const roomId = e.target.closest('.js-room-card').getAttribute('data-room-id');
-        localStorage.setItem('room', roomId);
+        try {
+          localStorage.setItem('room', roomId);
+        } catch {
+          localStorage.setItem('room', '888');
+        }
+        window.location.href = 'room-details.html';
       }
     }
   });

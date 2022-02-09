@@ -1,0 +1,12 @@
+.room-details-container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.room-details {
+  &__images {
+    display: grid;
+    grid-template-columns: 2.128fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}

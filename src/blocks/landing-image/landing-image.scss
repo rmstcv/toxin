@@ -1,6 +1,7 @@
 .landing-image-container {
   max-width: 100%;
-  position: relative;
+  position: absolute;
+  z-index: -1;
 }
 
 .landing-image img {

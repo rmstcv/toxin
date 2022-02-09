@@ -56,6 +56,7 @@ const config = {
     // main: './app.js',
     landingPage: './pages/landing-page/landing-page.js',
     searchRoom: './pages/search-room/search-room.js',
+    roomDetails: './pages/room-details/room-details.js',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -80,7 +81,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: './pages/landing-page/landing-page.pug',
       chunks: ['landingPage'],
-      filename: 'landingPage.html',
+      filename: 'landing-page.html',
       minify: {
         collapseWhitespace: isProd
       }
@@ -89,6 +90,14 @@ const config = {
       template: './pages/search-room/search-room.pug',
       chunks: ['searchRoom'],
       filename: 'search-room.html',
+      minify: {
+        collapseWhitespace: isProd
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './pages/room-details/room-details.pug',
+      chunks: ['roomDetails'],
+      filename: 'room-details.html',
       minify: {
         collapseWhitespace: isProd
       }

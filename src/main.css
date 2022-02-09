@@ -1,6 +1,7 @@
 @import "./less/style";
 @import "./pages/landing-page/landing-page";
 @import "./pages/search-room/search-room";
+@import "./pages/room-details/room-details";
 
 * {
   font-family: "Montserrat", Arial, sans-serif;

@@ -5,18 +5,17 @@
 
 .search-room-content {
   display: flex;
+  margin-top: 30px;
 }
 
 .search-room {
   &__filter {
-    margin-top: 100px;
     min-width: 266px;
   }
   &__filter > div:not(:first-child) {
     margin-top: 30px;
   }
   &__rooms {
-    margin-top: 100px;
     margin-left: 59px;
   }
   &__text {
