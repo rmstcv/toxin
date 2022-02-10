@@ -3,16 +3,3 @@
   margin: 0 auto;
   position: relative;
 }
-
-.room-details {
-  &__images {
-    display: grid;
-    grid-template-columns: 2.128fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 485px;
-    position: relative;
-  }
-}

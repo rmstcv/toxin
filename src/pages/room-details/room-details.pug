@@ -1,5 +1,6 @@
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
+include ../../blocks/room-details-images/room-details-images.pug
 
 doctype html
 html(lang="ru")
@@ -12,6 +13,6 @@ html(lang="ru")
     .room-details
       .room-details-container
         +header({logged: false})
-        .room-details__images
+        +room-details-images()
         .container
         +footer()

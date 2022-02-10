@@ -23,8 +23,8 @@ async function getJsonData(url, room) {
   const imgs = [];
   let img;
   for (let i = 0; i < 4; i += 1) {
-    img = `assets/images/rooms/room${roomInfo.room}.jpg`;
-    imgs.push(img);
+    img = `assets/images/rooms/room${roomInfo.room}-${i}.jpg`;
+    imgs.unshift(img);
   }
   roomInfo.images = imgs;
   return roomInfo;
