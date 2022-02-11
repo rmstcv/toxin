@@ -5,7 +5,12 @@
     "price": "9990",
     "stars": "5",
     "reviews": "145",
-    "images": []
+    "images": [],
+    "details": {
+      "comfort": "Шумопоглощающие стены", 
+      "convenience": "Окно в каждой из спален", 
+      "cosiness": "Номер оснащен камином"
+    }
   },
   {
     "room": "840",

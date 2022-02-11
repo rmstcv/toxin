@@ -1,6 +1,7 @@
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/room-details-images/room-details-images.pug
+include ../../blocks/details/details.pug
 
 doctype html
 html(lang="ru")
@@ -15,4 +16,26 @@ html(lang="ru")
         +header({logged: false})
         +room-details-images()
         .container
+          .room-details__content
+            .room-details__details
+              +details({
+                title: "Комфорт", 
+                name: "comfort", 
+                image: 'insert_emoticon',
+              })
+              +details({
+                title: "Удобства", 
+                name: "convenience", 
+                image: "location_city",
+              })
+              +details({
+                title: "Уют", 
+                name: "cosiness", 
+                image: "whatshot",
+              })
+            .room-details__vote
+            .room-details__booking
+            .room-details__reviews
+            .room-details__rules
+            .room-details__cancel
         +footer()

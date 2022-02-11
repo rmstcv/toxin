@@ -1,6 +1,7 @@
 import '../../main';
 import '../../main.css';
 import addImages from '../../blocks/room-details-images/room-details-images';
+import addDetails from '../../blocks/details/details';
 
 import getJsonData from '../../libs/get-json-data';
 
@@ -13,6 +14,7 @@ async function addInfo() {
   }
   const data = await getJsonData('data.json', room);
   addImages(data.images);
+  addDetails(data.details);
 }
 
 addInfo();

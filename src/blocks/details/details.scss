@@ -1,0 +1,30 @@
+.details {
+  position: relative;
+  display: flex;
+  margin-bottom: 37px;
+  &__image {
+    max-width: 40px;
+  }
+  &__text-content {
+    margin-left: 17px;
+  }
+  &__text {
+    @include type-body;
+    &_bold {
+      font-weight: 700;
+    }
+  }
+}
+.details:after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 1px;
+  background-color: #1f2041;
+  opacity: 0.1;
+  margin-bottom: -20px;
+  bottom: 0;
+}
+.details:last-child:after {
+  content: none;
+}

@@ -6,6 +6,11 @@ async function getJsonData(url, room) {
     stars: '0',
     reviews: '0',
     images: [''],
+    details: {
+      comfort: '',
+      convenience: '',
+      cosiness: '',
+    },
   };
   let roomInfo;
   try {
@@ -27,6 +32,11 @@ async function getJsonData(url, room) {
     imgs.unshift(img);
   }
   roomInfo.images = imgs;
+  roomInfo.details = {
+    comfort: 'Шумопоглощающие стены',
+    convenience: 'Окно в каждой из спален',
+    cosiness: 'Номер оснащен камином',
+  };
   return roomInfo;
 }
 
