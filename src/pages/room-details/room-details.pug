@@ -2,6 +2,7 @@ include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/room-details-images/room-details-images.pug
 include ../../blocks/details/details.pug
+include ../../blocks/booking-form/booking-form.pug
 
 doctype html
 html(lang="ru")
@@ -18,6 +19,7 @@ html(lang="ru")
         .container
           .room-details__content
             .room-details__details
+              .room-details__details-title Сведения о номере
               +details({
                 title: "Комфорт", 
                 name: "comfort", 
@@ -35,6 +37,7 @@ html(lang="ru")
               })
             .room-details__vote
             .room-details__booking
+              +booking-form()
             .room-details__reviews
             .room-details__rules
             .room-details__cancel

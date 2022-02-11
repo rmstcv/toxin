@@ -2,6 +2,7 @@ import addSpace from '../../libs/add-spaces';
 
 function insertRoomInfo(data, elem) {
   const roomNode = elem;
+  console.log(data);
   roomNode.innerHTML = `
     <div class ="room-short-info" data-room=${data.room}>
       <div>

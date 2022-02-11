@@ -4,11 +4,17 @@
   position: relative;
 }
 
-.room-details__content {
-  display: grid;
+.room-details {
+  &__content {
+    display: grid;
+  }
   &__details {
     grid-row: 1/2;
     grid-column: 1/2;
+  }
+  &__details-title {
+    @include type-h2;
+    margin-bottom: 20px;
   }
   &__vote {
     grid-row: 1/2;
