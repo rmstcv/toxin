@@ -3,6 +3,7 @@ include ../../blocks/footer/footer.pug
 include ../../blocks/room-details-images/room-details-images.pug
 include ../../blocks/details/details.pug
 include ../../blocks/booking-form/booking-form.pug
+include ../../blocks/chart/chart.pug
 
 doctype html
 html(lang="ru")
@@ -36,6 +37,9 @@ html(lang="ru")
                 image: "whatshot",
               })
             .room-details__vote
+              .room-details__vote-title Впечатления от номера
+              .room-details__vote-content
+                +chart()
             .room-details__booking
               +booking-form()
             .room-details__reviews
