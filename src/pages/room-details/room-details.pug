@@ -4,6 +4,7 @@ include ../../blocks/room-details-images/room-details-images.pug
 include ../../blocks/details/details.pug
 include ../../blocks/booking-form/booking-form.pug
 include ../../blocks/chart/chart.pug
+include ../../blocks/review/review.pug
 
 doctype html
 html(lang="ru")
@@ -43,6 +44,11 @@ html(lang="ru")
             .room-details__booking
               +booking-form()
             .room-details__reviews
+              .room-details__reviews-title-wrapper
+                .room-details__reviews-title Отзывы посетителей номера
+                .room-details__reviews-title-counter.js-room-details__reviews-title-counter
+              +review()
+              +review()
             .room-details__rules
             .room-details__cancel
         +footer()

@@ -1,0 +1,30 @@
+.like-button {
+  width: 39.72px;
+  height: 20px;
+  border: 1px solid $color-dark-25;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  &__content {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+  &__heart {
+    opacity: 0;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &_active {
+      opacity: 1;
+    }
+  }
+  &__number-of-likes {
+    font-size: 10px;
+    line-height: 12px;
+    color: $color-dark-25;
+  }
+}

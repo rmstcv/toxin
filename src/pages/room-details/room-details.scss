@@ -29,4 +29,24 @@
     grid-row: 1/4;
     grid-column: 3/4;
   }
+  &__reviews {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    margin-top: 30px;
+    margin-right: 70px;
+  }
+  &__reviews-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__reviews-title {
+    @include type-h2;
+  }
+  &__reviews-title-counter {
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    font-weight: 400;
+    color: $color-dark-50;
+  }
 }
