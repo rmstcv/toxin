@@ -65,4 +65,4 @@ function vote(arr) {
   addTotalVotes(totalVotes);
 }
 
-vote([0, 65, 65, 130]);
+export default vote;

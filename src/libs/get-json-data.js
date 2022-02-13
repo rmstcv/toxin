@@ -4,7 +4,7 @@ async function getJsonData(url, room) {
     class: '',
     price: '',
     stars: '0',
-    reviews: '0',
+    reviews: [0, 0, 0, 0],
     images: [''],
     details: {
       comfort: '',
@@ -37,6 +37,7 @@ async function getJsonData(url, room) {
     convenience: 'Окно в каждой из спален',
     cosiness: 'Номер оснащен камином',
   };
+  roomInfo.reviews = [0, 65, 65, 130];
   return roomInfo;
 }
 

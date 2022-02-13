@@ -4,7 +4,7 @@
     "class": "люкс",
     "price": "9990",
     "stars": "5",
-    "reviews": "145",
+    "reviews": [0, 65, 65, 130],
     "images": [],
     "details": {
       "comfort": "Шумопоглощающие стены", 

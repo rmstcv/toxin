@@ -1,6 +1,13 @@
 mixin chart() 
   .chart.js-chart
-    <svg viewBox="0 0 120 120" class="chart__svg"></svg>
-    .chart__inner-content
-      .chart__number.js-chart__number 100
-      .chart__text голосов
+    .chart__diagram
+      <svg viewBox="0 0 120 120" class="chart__svg"></svg>
+      .chart__inner-content
+        .chart__number.js-chart__number
+        .chart__text голосов
+    .chart__legend
+      ul 
+        li.chart__legend-list.chart__legend-list_orange Великолепно
+        li.chart__legend-list.chart__legend-list_green Хорошо
+        li.chart__legend-list.chart__legend-list_purple Удовлетворительно
+        li.chart__legend-list.chart__legend-list_black Плохо
