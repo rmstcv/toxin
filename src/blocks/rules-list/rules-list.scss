@@ -1,0 +1,24 @@
+.rules-list {
+  @include type-body;
+  font-weight: 400;
+  ul {
+    list-style-type: none;
+    li {
+      position: relative;
+      margin-top: 10px;
+      display: flex;
+    }
+    li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      border-radius: 20px;
+      margin-right: 10px;
+      display: inline-block;
+      background-color: $color-dark-25;
+      position: relative;
+      top: 0.44rem;
+    }
+  }
+}

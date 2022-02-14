@@ -7,6 +7,7 @@ import chart from '../../blocks/chart/chart';
 import getJsonData from '../../libs/get-json-data';
 import getReviewsData from '../../libs/get-json-rewiews';
 import addReviews from '../../blocks/review/review';
+import addRules from '../../blocks/rules-list/rules-list';
 
 async function addInfo() {
   let room;
@@ -36,6 +37,7 @@ async function addInfo() {
     content = `${countReviews} отзывов`;
   }
   document.querySelector('.js-room-details__reviews-title-counter').innerHTML = content;
+  addRules(data.rules);
 }
 
 addInfo();

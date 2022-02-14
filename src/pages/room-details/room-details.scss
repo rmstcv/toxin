@@ -7,7 +7,10 @@
 .room-details {
   &__content {
     display: grid;
+    grid-template-columns: 0.84fr 1fr 1fr;
     margin-top: 70px;
+    row-gap: 30px;
+    column-gap: 70px;
   }
   &__details {
     grid-row: 1/2;
@@ -32,8 +35,6 @@
   &__reviews {
     grid-row: 2/3;
     grid-column: 1/3;
-    margin-top: 30px;
-    margin-right: 70px;
   }
   &__reviews-title-wrapper {
     display: flex;
@@ -48,5 +49,28 @@
     line-height: 0.875rem;
     font-weight: 400;
     color: $color-dark-50;
+  }
+  &__rules-title,
+  &__cancel-title {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    @include type-h2;
+    margin-left: 20px;
+  }
+  &__cancel-title {
+    grid-column: 2/3;
+    margin: 0;
+  }
+  &__rules-text,
+  &__cancel-text {
+    @include type-body;
+    font-weight: 400;
+    margin-top: 20px;
+  }
+  &__rules-text {
+    max-width: 90%;
+  }
+  &__cancel-text {
+    max-width: 98%;
   }
 }

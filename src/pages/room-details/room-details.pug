@@ -5,6 +5,7 @@ include ../../blocks/details/details.pug
 include ../../blocks/booking-form/booking-form.pug
 include ../../blocks/chart/chart.pug
 include ../../blocks/review/review.pug
+include ../../blocks/rules-list/rules-list.pug
 
 doctype html
 html(lang="ru")
@@ -50,5 +51,10 @@ html(lang="ru")
               +review()
               +review()
             .room-details__rules
+              .room-details__rules-title Правила
+              .room-details__rules-text
+                +rules()
             .room-details__cancel
+              .room-details__cancel-title Отмена
+              .room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         +footer()

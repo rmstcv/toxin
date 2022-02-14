@@ -12,6 +12,7 @@ async function getJsonData(url, room) {
       cosiness: '',
     },
     votes: [0, 65, 65, 130],
+    rules: [1, 2, 3],
   };
   let roomInfo;
   try {
@@ -39,6 +40,7 @@ async function getJsonData(url, room) {
     cosiness: 'Номер оснащен камином',
   };
   roomInfo.votes = [0, 65, 65, 130];
+  roomInfo.rules = [1, 2, 3];
   return roomInfo;
 }
 
