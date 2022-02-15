@@ -1,6 +1,7 @@
 //- 
   Принимает:
     content {string} - контент чекбокса (заголовок)
+    id {num} - id правила (database)
     extraContent {string} - дополнительная информация, под основным контентом
     item: [{name:""}] {string} - значение аттрибута <input name="name">
     descr: {string} - описание чекбокса
@@ -10,14 +11,13 @@
   Вызов:
     +checkbox({
       item: [
-        {content: "Завтрак", name: "checkbox buttons"},
-        {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox buttons"},
+        {content: "Завтрак", name: "checkbox buttons", id: 11},
+        {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox buttons", id: 13},
       ],
       isDropped: true,
       name: 'expandable checkbox list',
       isRich: true
     }) 
-
 
 mixin checkbox(options)
   - 
@@ -34,7 +34,10 @@ mixin checkbox(options)
     div(class = `checkbox-list js-checkbox-list ${droppedClass}`)
       each val in options.item
         .checkbox-button 
-          input(class="checkbox-button__custom" type="checkbox" name=val.name value=val.content)
+          - 
+            var id= ""
+            id += val.id? `${val.id}` : ""
+          input(class="checkbox-button__custom" data-rule-id=id type="checkbox" name=val.name value=val.content)
           label(class="checkbox-button__label" for=val.content)
             .checkbox-button__icon-out
               .checkbox-button__icon-in

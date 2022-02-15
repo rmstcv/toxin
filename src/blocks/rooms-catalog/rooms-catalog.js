@@ -7,6 +7,32 @@ function getSliderValues() {
   return values;
 }
 
+function filter(data) {
+  const filterValues = getSliderValues();
+  let isFilter = false;
+  const rules = [];
+  const rulesCheckbox = document.querySelectorAll('[data-rule-id]');
+  for (let i = 0; i < rulesCheckbox.length; i += 1) {
+    let rule;
+    if (+rulesCheckbox[i].checked) {
+      rule = +rulesCheckbox[i].getAttribute('data-rule-id');
+    }
+    if (rule) {
+      rules.push(rule);
+    }
+  }
+  let interId = false;
+  if (data.rules) {
+    interId = data.rules.some((id) => rules.includes(id));
+  }
+  if (+data.price <= filterValues[1]
+    && +data.price >= filterValues[0]
+    && !interId) {
+    isFilter = true;
+  }
+  return isFilter;
+}
+
 function resetPagination(cards) {
   let cardsNum = cards;
   if (cards === 0) {
@@ -41,6 +67,7 @@ async function changeCards(n) {
     stars: '0',
     reviews: '0',
     images: [''],
+    rules: [''],
   };
   const catalogPage = document.querySelector('.js-rooms-catalog__rooms');
   catalogPage.innerHTML = '';
@@ -51,10 +78,9 @@ async function changeCards(n) {
     data = err;
   }
 
-  const filterValues = getSliderValues();
   const newDataIndex = [];
   for (let i = 0; i < data.length; i += 1) {
-    if (+data[i].price <= filterValues[1] && +data[i].price >= filterValues[0]) {
+    if (filter(data[i])) {
       newDataIndex.push(i + 1);
     }
   }
@@ -79,6 +105,15 @@ function addSliderHandle() {
   });
 }
 
+function addCheckboxHandle() {
+  const checkboxes = document.querySelector('.js-search-room__filter');
+  checkboxes.addEventListener('click', (e) => {
+    if (e.target.classList.contains('checkbox-button__custom')) {
+      changeCards(1);
+    }
+  });
+}
+
 function addCardsListener() {
   const roomslist = document.querySelector('.js-rooms-catalog__rooms');
   const stopClasses = ['swiper-button-next', 'swiper-button-prev'];
@@ -99,5 +134,6 @@ function addCardsListener() {
 
 changeCards(1);
 addSliderHandle();
+addCheckboxHandle();
 paginationAction(changeCards);
 addCardsListener();

@@ -27,10 +27,6 @@ function rulesList(data) {
         }
       });
     }
-    // id = data[i];
-    // item = document.createElement('li');
-    // item.innerHTML = rules[id];
-    // list.appendChild(item);
   }
   rulesElement.appendChild(list);
 }

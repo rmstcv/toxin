@@ -19,7 +19,7 @@ html(lang="ru")
         +header({logged: false})
         .container
           .search-room-content
-            .search-room__filter
+            .search-room__filter.js-search-room__filter
               +dropdown-date({
                 fieldName: "даты пребывания в отеле", 
                 type: "text", 
@@ -40,7 +40,7 @@ html(lang="ru")
               +checkbox({
                 item: [
                   {content: "Mожно курить", name: "checkbox-house-rules"},
-                  {content: "Mожно с питомцами", name: "checkbox-house-rules"},
+                  {content: "Mожно с питомцами", name: "checkbox-house-rules", id: 1},
                   {content: "Mожно пригласить гостей", extraContent: "(до 10 человек)", name: "checkbox-house-rules"}
                 ],
                 name: "ПРАВИЛА ДОМА",
