@@ -7,17 +7,17 @@
   width: 100%;
   position: relative;
   &__main {
-    background-color: green;
+    max-height: 485px;
     grid-column: 1/2;
     grid-row: 1/3;
   }
   &__second {
-    background-color: red;
+    max-height: 242.5px;
     grid-column: 2/3;
     grid-row: 1/2;
   }
   &__third {
-    background-color: blue;
+    max-height: 242.5px;
     grid-column: 2/3;
     grid-row: 2/3;
   }

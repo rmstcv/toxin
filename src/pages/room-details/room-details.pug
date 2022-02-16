@@ -18,6 +18,7 @@ html(lang="ru")
     .room-details
       .room-details-container
         +header({logged: false})
+      .room-details-container.room-details-container_shadow
         +room-details-images()
         .container
           .room-details__content
@@ -57,4 +58,5 @@ html(lang="ru")
             .room-details__cancel
               .room-details__cancel-title Отмена
               .room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      .room-details-container
         +footer()

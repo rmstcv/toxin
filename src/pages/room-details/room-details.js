@@ -1,5 +1,4 @@
 import '../../main';
-import '../../main.css';
 import addImages from '../../blocks/room-details-images/room-details-images';
 import addDetails from '../../blocks/details/details';
 import '../../blocks/booking-form/booking-form';

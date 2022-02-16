@@ -1,5 +1,8 @@
 .footer {
   background-color: #fff;
+  border-top: 2px solid transparent;
+  border-color: $color-dark-5;
+
   &__container {
     margin: 0 auto;
     max-width: $container-width;

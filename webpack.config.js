@@ -57,6 +57,7 @@ const config = {
     landingPage: './pages/landing-page/landing-page.js',
     searchRoom: './pages/search-room/search-room.js',
     roomDetails: './pages/room-details/room-details.js',
+    registration: './pages/registration/registration.js',
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -102,6 +103,14 @@ const config = {
         collapseWhitespace: isProd
       }
     }),
+     new HtmlWebpackPlugin({
+      template: './pages/registration/registration.pug',
+      chunks: ['registration'],
+      filename: 'registration.html',
+      minify: {
+        collapseWhitespace: isProd
+      }
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       // chunkFilename: "[id].css",
@@ -112,6 +121,7 @@ const config = {
       patterns: [
         { from: "assets/images", to: "assets/images" },
         { from: "data.json", to: "" },
+        { from: "reviews.json", to: "" },
       ],
     }),
   ],
