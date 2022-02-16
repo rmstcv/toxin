@@ -24,4 +24,5 @@ mixin header(options)
         else
           .header__no-logged
             +simple-button({type: 'uncolored-header',text: 'войти'})
-            +simple-button({type: 'long-header',text: 'зарегистрироваться'})
+            .header__button-reg.js-header__button-reg
+              +simple-button({type: 'long-header',text: 'зарегистрироваться'})

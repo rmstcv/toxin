@@ -1,0 +1,49 @@
+.radio-button {
+  position: relative;
+  &__custom {
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    width: 21px;
+    height: 21px;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    &:checked + label .radio-button {
+      &__icon-out {
+        position: relative;
+        width: 21px;
+        height: 21px;
+        border: 1px solid $color-second;
+        border-radius: 10px;
+        margin-right: 1rem;
+      }
+      &__icon-in {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__icon-out {
+    width: 21px;
+    height: 21px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+    margin-right: 1rem;
+  }
+  &__content {
+    @include type-body;
+    color: $color-dark-50;
+  }
+}

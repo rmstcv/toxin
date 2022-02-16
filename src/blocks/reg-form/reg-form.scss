@@ -1,0 +1,29 @@
+.reg-form {
+  @include form-container;
+  background-color: #fff;
+  &__title {
+    @include type-h1;
+  }
+  &__content-wrapper {
+    margin-top: 21px;
+    &_min {
+      margin-top: 10px;
+    }
+  }
+  &__radio-buttons {
+    margin-top: 10px;
+    display: flex;
+  }
+  &__radio-button {
+    margin-left: 20px;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__text {
+    @include type-body;
+  }
+}

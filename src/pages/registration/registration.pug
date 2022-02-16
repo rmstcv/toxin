@@ -1,5 +1,6 @@
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
+include ../../blocks/reg-form/reg-form.pug
 
 doctype html
 html(lang="ru")
@@ -9,3 +10,13 @@ html(lang="ru")
     title Toxin
     
   body
+    .registration
+      .registration-container
+        .registration__header
+          +header({logged: false})
+        .registration__image
+          img(class="landing-image__image" src=require("/pages/registration/" + "registration" + ".jpg") alt="image" loading="lazy" width="1440" height="753")
+        .registration__reg-form
+            +regform()
+      .registration-container
+        +footer()

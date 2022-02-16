@@ -1,0 +1,23 @@
+//- Принимает:
+//-   content {string} - текст кнопки
+//-   name {string} - аттрибут «name»
+//-   isChecked {bool} - аттрибут «checked»
+//- Вызов:
+        +radio-buttons({
+          item: [
+            {content: "some text", name: "some name", checked: true},
+            {content: "some text", name: "some name"},
+          ]
+        })
+
+mixin radio-buttons(options)
+  each val in options.item
+    .radio-button
+      if val.checked
+        input(class="radio-button__custom" type="radio" name=val.name value=val.content checked)
+      else 
+        input(class="radio-button__custom" type="radio" name=val.name value=val.content)       
+      label(class="radio-button__label" for=val.content)
+        .radio-button__icon-out
+          .radio-button__icon-in
+        p(class="radio-button__content")= val.content

@@ -1,0 +1,57 @@
+include ../fields/fields.pug
+include ../button-radio/button-radio.pug
+include ../button-toggle/button-toggle.pug
+
+mixin regform()
+  .reg-form
+    .reg-form__title Регистрация аккаунта
+    .reg-form__content-wrapper
+      +field-default({
+        type: "text", 
+        placeholder: "Имя"
+      })
+    .reg-form__content-wrapper.reg-form__content-wrapper_min
+      +field-default({
+        type: "text", 
+        placeholder: "Фамилия"
+      })
+    .reg-form__radio-buttons
+      +radio-buttons({
+        item: [
+          {content: "Мужчина", name: "sex", checked: true},
+        ]
+      })
+      .reg-form__radio-button
+        +radio-buttons({
+          item: [
+            {content: "Женщина", name: "sex"}
+          ]
+        })
+    .reg-form__content-wrapper
+      +field-default({
+        fieldName: "ДАТА РОЖДЕНИЯ", 
+        type: "text", 
+        placeholder: "ДД.ММ.ГГГГ"
+      })
+    .reg-form__content-wrapper
+      +field-default({
+        fieldName: "ДАННЫЕ ДЛЯ ВХОДА В СЕРВИС", 
+        type: "email", 
+        placeholder: "Email"
+      })
+
+      .reg-form__content-wrapper.reg-form__content-wrapper_min
+        +field-default({
+          type: "password", 
+          placeholder: "Пароль"
+        })
+    .reg-form__content-wrapper.reg-form__content-wrapper_min
+      +toggle-button({
+        content: "Получать спецпредложения", 
+        name: "some name"
+      })
+    .reg-form__content-wrapper
+      +simple-button({type: "long", text: "ЗАРЕГИСТРИРОВАТЬСЯ"})
+    .reg-form__footer
+      .reg-form__text Уже есть аккаунт на Toxin 
+      +simple-button({type: 'uncolored', text: 'ВОЙТИ'})
