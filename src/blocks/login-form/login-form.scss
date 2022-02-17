@@ -1,0 +1,22 @@
+.login-form {
+  @include form-container;
+  background-color: #fff;
+  &__title {
+    @include type-h1;
+  }
+   &__content-wrapper {
+    margin-top: 20px;
+    &_min {
+      margin-top: 10px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__text {
+    @include type-body;
+  }
+}

@@ -64,11 +64,11 @@
     color: $color-dark-50;
   }
   &__logged,
-  &__no-logged {
+  &__entry {
     display: flex;
     align-items: center;
   }
-  &__no-logged button:first-child {
+  &__entry button:first-child {
     margin-right: 20px;
   }
 }

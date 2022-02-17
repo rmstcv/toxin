@@ -1,0 +1,23 @@
+include ../button/button.pug
+include ../fields/fields.pug
+
+mixin login-form
+  .login-form
+    .login-form__title Войти
+    .login-form__content-wrapper
+      +field-default({ 
+        type: "email", 
+        placeholder: "Email"
+      })
+
+    .login-form__content-wrapper.login-form__content-wrapper_min
+      +field-default({
+        type: "password", 
+        placeholder: "Пароль"
+      })
+    .login-form__content-wrapper
+      +simple-button({type: "long", text: "ВОЙТИ"})
+    .login-form__footer
+      .login-form__text Нет аккаунта на Toxin?
+      .login-form__reg-button.js-login-form__reg-button
+        +simple-button({type: 'uncolored', text: 'СОЗДАТЬ'})

@@ -54,4 +54,5 @@ mixin regform()
       +simple-button({type: "long", text: "ЗАРЕГИСТРИРОВАТЬСЯ"})
     .reg-form__footer
       .reg-form__text Уже есть аккаунт на Toxin 
-      +simple-button({type: 'uncolored', text: 'ВОЙТИ'})
+      .reg-form__login-button.js-reg-form__login-button
+        +simple-button({type: 'uncolored', text: 'ВОЙТИ'})

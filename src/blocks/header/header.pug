@@ -22,7 +22,8 @@ mixin header(options)
             .header__divider
             .header__user-name= options.name
         else
-          .header__no-logged
-            +simple-button({type: 'uncolored-header',text: 'войти'})
+          .header__entry.js-header__entry
+            .header__button-login.js-header__button-login
+              +simple-button({type: 'uncolored-header',text: 'войти'})
             .header__button-reg.js-header__button-reg
               +simple-button({type: 'long-header',text: 'зарегистрироваться'})

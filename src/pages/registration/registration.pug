@@ -1,6 +1,7 @@
 include ../../blocks/header/header.pug
 include ../../blocks/footer/footer.pug
 include ../../blocks/reg-form/reg-form.pug
+include ../../blocks/login-form/login-form.pug
 
 doctype html
 html(lang="ru")
@@ -16,7 +17,9 @@ html(lang="ru")
           +header({logged: false})
         .registration__image
           img(class="landing-image__image" src=require("/pages/registration/" + "registration" + ".jpg") alt="image" loading="lazy" width="1440" height="753")
-        .registration__reg-form
+        .registration__reg-form.js-registration__reg-form.registration__reg-form_hidden
             +regform()
+        .registration__login-form.js-registration__login-form.registration__login-form_hidden
+            +login-form()
       .registration-container
         +footer()

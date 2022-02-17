@@ -1,4 +1,5 @@
 import AirDatepicker from 'air-datepicker';
+import 'air-datepicker/air-datepicker.css';
 
 function checkRangeClass() {
   const inRangeElems = document.querySelectorAll('.air-datepicker-cell.-day-.-selected-.-range-from-');

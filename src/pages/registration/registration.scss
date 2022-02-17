@@ -10,11 +10,15 @@
     height: 100%;
     display: block;
   }
-  &__reg-form {
+  &__reg-form,
+  &__login-form {
     position: absolute;
-    top: 90px;
+    top: calc(70px / 2 + 50%);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    &_hidden {
+      display: none;
+    }
   }
 }
 
