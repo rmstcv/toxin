@@ -3,7 +3,7 @@
   font-display: swap;
   src: local("Montserrat"),
     url("../assets/fonts/Montserrat-Bold.ttf") format("truetype"),
-    url("/assets/fonts/montserrat-Bold.woff") format("woff");
+    url("../assets/fonts/montserrat-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }

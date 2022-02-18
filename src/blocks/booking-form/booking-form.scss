@@ -1,3 +1,8 @@
+@import "../dropdown/dropdown";
+@import "../dropdown-date/dropdown-date";
+@import "../room-short-info/room-short-info";
+@import "../button/button";
+
 .booking-form {
   @include form-container;
   background-color: #fff;

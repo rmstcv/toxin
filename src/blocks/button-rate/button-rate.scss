@@ -9,14 +9,14 @@
     &_uncolored {
       width: 20px;
       height: 19px;
-      background: no-repeat url("blocks/button-rate/star_border.svg");
+      background: no-repeat url("/blocks/button-rate/star_border.svg");
       margin-right: 4px;
     }
 
     &_colored {
       width: 20px;
       height: 19px;
-      background: no-repeat url("blocks/button-rate/star.svg");
+      background: no-repeat url("/blocks/button-rate/star.svg");
       margin-right: 4px;
     }
   }

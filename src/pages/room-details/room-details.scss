@@ -1,3 +1,17 @@
+@import "../../less/variables";
+@import "../../less/mixins/types";
+@import "../../less/mixins/marks";
+@import "../../less/mixins/inputs";
+@import "../../less/mixins/form-container";
+@import "../../blocks/header/header";
+@import "../../blocks/room-details-images/room-details-images";
+@import "../../blocks/details/details";
+@import "../../blocks/booking-form/booking-form";
+@import "../../blocks/chart/chart";
+@import "../../blocks/review/review";
+@import "../../blocks/rules-list/rules-list";
+@import "../../blocks/footer/footer";
+
 .room-details-container {
   max-width: $container-width;
   margin: 0 auto;

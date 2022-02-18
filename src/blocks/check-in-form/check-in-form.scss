@@ -1,3 +1,7 @@
+@import "../button/button";
+@import "../dropdown/dropdown";
+@import "../dropdown-date/dropdown-date";
+
 .check-in-form {
   @include form-container;
   background-color: #fff;

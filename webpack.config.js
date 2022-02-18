@@ -13,10 +13,44 @@ const isProd = !isDev;
 
 const optimization = () => {
   const config = {
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
-      minChunks: 2,
-    }
+      // cacheGroups: {
+      //   landingPageStyles: {
+      //     type: "css/mini-extract",
+      //     name: "styles_landingPage",
+      //     chunks: (chunk) => {
+      //       return chunk.name === "landingPage";
+      //     },
+      //     enforce: true,
+      //   },
+      //   searchRoomStyles: {
+      //     type: "css/mini-extract",
+      //     name: "styles_searchRoom",
+      //     chunks: (chunk) => {
+      //       return chunk.name === "searchRoom";
+      //     },
+      //     enforce: true,
+      //   },
+      //   roomDetailsStyles: {
+      //   type: "css/mini-extract",
+      //   name: "styles_roomDetails",
+      //   chunks: (chunk) => {
+      //     return chunk.name === "roomDetails";
+      //   },
+      //   enforce: true,
+      // },
+      // registrationStyles: {
+      //   type: "css/mini-extract",
+      //   name: "styles_registration",
+      //   chunks: (chunk) => {
+      //     return chunk.name === "registration";
+      //   },
+      //   enforce: true,
+      // },
+      // },
+    },
   }
 
   if (isProd) {
@@ -53,7 +87,6 @@ const jsLoaders = () => {
 const config = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    // main: './app.js',
     landingPage: './pages/landing-page/landing-page.js',
     searchRoom: './pages/search-room/search-room.js',
     roomDetails: './pages/room-details/room-details.js',
@@ -73,12 +106,6 @@ const config = {
   devtool: map(),
 
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   template: './index.pug',
-    //   minify: {
-    //     collapseWhitespace: isProd
-    //   }
-    // }),
     new HtmlWebpackPlugin({
       template: './pages/landing-page/landing-page.pug',
       chunks: ['landingPage'],
@@ -169,7 +196,7 @@ const config = {
         test: /\.pug$/,
         loader: 'pug-loader',
         options: {
-          pretty: false
+        pretty: false
         }
       },
     ]

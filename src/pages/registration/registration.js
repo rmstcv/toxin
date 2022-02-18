@@ -1,3 +1,4 @@
+import './registration.scss';
 import '../../main';
 import '../../blocks/header/header';
 

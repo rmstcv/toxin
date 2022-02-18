@@ -6,11 +6,13 @@
     Вызов:
      +header({logged: true, name: "Юлий Цезарь"})
 
-include ../button/button.pug
+include ../button/button
+include ../logo-text/logo-text
+
 mixin header(options)
   header.header
     .header__wrapper
-      include ../logo-text/logo-text.pug
+      +logo-text()
       nav.header__nav-wrapper
         a(class="header__nav header__nav_about" href="/mock-address/change-me") О нас
         div(class="header__nav header__nav_services header__nav_drop" href="/mock-address/change-me") Услуги
