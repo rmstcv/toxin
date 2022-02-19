@@ -1,5 +1,5 @@
 @import "../button/button";
-
+@import "../logo-text/logo-text";
 .header {
   position: relative;
   top: 0;
@@ -22,38 +22,54 @@
     margin-left: 20px;
   }
   &__nav {
-    position: relative;
-    @include type-body;
-    color: $color-dark-50;
-    text-decoration: none;
-    &_drop {
-      &::after {
-        content: "";
-        @include dropdown-mark;
-        left: inherit;
-        right: -20px;
-        width: 6px;
-        height: 6px;
-      }
+    display: flex;
+    align-items: center;
+    & a {
+      position: relative;
+      @include type-body;
+      color: $color-dark-50;
+      text-decoration: none;
     }
-    &_about,
-    &_vacancies,
-    &_news {
-      margin-right: 20px;
-      white-space: nowrap;
+    &_agreements,
+    &_services {
+      margin-right: 22px;
     }
-    &_services,
+    &_services {
+      width: 4.5rem;
+    }
     &_agreements {
-      margin-right: 45px;
+      width: 7.125rem;
+    }
+    &_about a {
+      width: 3.875rem;
+    }
+    &_vacancies a {
+      width: 5.75rem;
+    }
+    &_news a {
+      width: 5.125rem;
+    }
+    &_services a {
+      margin-right: 14px;
+    }
+    &_agreements a {
+      margin-right: 14px;
     }
   }
-  &__nav:hover {
-    text-shadow: 0.6px 0.6px 0.6px currentColor, 0.6px 0.6px 0.6px currentColor,
-      0.6px 0 0 currentColor;
+  &__nav-drop {
+    @include dropdown-mark;
+    transform: rotate(-45deg) translate(-50%, -50%);
+    position: relative;
+    left: 0;
+    bottom: 1px;
+  }
+  &__nav:hover a {
+    font-weight: 700;
+    color: $color-dark-75;
     cursor: pointer;
   }
-  &__nav button {
-    margin-left: 20px;
+  &__nav:hover button {
+    border-color: $color-dark-75;
   }
   &__divider {
     width: 1px;
@@ -69,8 +85,9 @@
   &__entry {
     display: flex;
     align-items: center;
+    // margin-left: 22px;
   }
-  &__entry button:first-child {
-    margin-right: 20px;
+  &__button-reg {
+    margin-left: 20px;
   }
 }

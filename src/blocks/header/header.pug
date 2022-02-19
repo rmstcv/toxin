@@ -14,11 +14,18 @@ mixin header(options)
     .header__wrapper
       +logo-text()
       nav.header__nav-wrapper
-        a(class="header__nav header__nav_about" href="/mock-address/change-me") О нас
-        div(class="header__nav header__nav_services header__nav_drop" href="/mock-address/change-me") Услуги
-        a(class="header__nav header__nav_vacancies" href="/mock-address/change-me") Вакансии
-        a(class="header__nav header__nav_news" href="/mock-address/change-me") Новости
-        div(class="header__nav header__nav_agreements header__nav_drop" href="/mock-address/change-me") Соглашения
+        div(class="header__nav header__nav_about")
+          a(href="/mock-address/change-me") О нас
+        div(class="header__nav header__nav_services header__nav_nohover")
+          a(href="/mock-address/change-me") Услуги
+          button(class="header__nav-drop")
+        div(class="header__nav header__nav_vacancies")
+          a(href="/mock-address/change-me") Вакансии
+        div(class="header__nav header__nav_news")
+          a(href="/mock-address/change-me") Новости
+        div(class="header__nav header__nav_agreements header__nav_nohover")
+          a(href="/mock-address/change-me") Соглашения
+          button(class="header__nav-drop")
         if options.logged
           .header__logged
             .header__divider
