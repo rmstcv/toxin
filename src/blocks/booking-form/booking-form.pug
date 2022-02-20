@@ -12,8 +12,6 @@ mixin booking-form()
           fieldNameDouble: "ВЫЕЗД",  
           type: "text", 
           placeholder: "ДД.ММ.ГГГГ",
-          dateIn: "2019, 7, 19",
-          dateOut: "2019, 7, 23",
           isSmall: true,
           isDouble: true
         })
@@ -22,11 +20,11 @@ mixin booking-form()
         fieldName: "ГОСТИ",
         dropdownName: "guests",
         defaultItems: [
-          {"name":"взрослые","value":"3", "max":"3","min":"0"},
+          {"name":"взрослые","value":"0", "max":"3","min":"0"},
           {"name":"дети","value":"0","max":"3","min":"0"},
           {"name":"младенцы","value":"0", "max":"3","min":"0"}
           ],
-        defaultContent: "3 гостя",
+        defaultContent: "Сколько гостей",
         isLarge: true,
         confirmPanel: true
       })

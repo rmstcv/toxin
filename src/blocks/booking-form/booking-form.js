@@ -14,14 +14,21 @@ class BookingForm {
   insertCalcInfo() {
     const calcInfoElem = document.createElement('div');
     const price = Number(this.roomData.price);
-    const dayIn = new Date('Tue Jul 23 2019 00:00:00 GMT+0500 (Екатеринбург, стандартное время)');
-    const dayOut = new Date('Tue Jul 27 2019 00:00:00 GMT+0500 (Екатеринбург, стандартное время)');
+    let dayIn;
+    let dayOut;
+    try {
+      dayIn = new Date(localStorage.getItem('dateIn'));
+      dayOut = new Date(localStorage.getItem('dateOut'));
+    } catch {
+      dayIn = 0;
+      dayOut = 0;
+    }
     const days = (dayOut.getTime() - dayIn.getTime()) / 86400000;
     let daysPostfix = 'суток';
     let addServices = 0;
     let sale = 2179;
     let services = 300;
-    if (!this.roomData.price) {
+    if (!this.roomData.price || days === 0) {
       addServices = 0;
       sale = 0;
       services = 0;
