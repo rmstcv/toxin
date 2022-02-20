@@ -1,6 +1,7 @@
 import './registration.scss';
 import '../../main';
 import '../../blocks/header/header';
+import formValidation from '../../blocks/reg-form/reg-form';
 
 function addLoginButtonListener(reg, login) {
   const loginButton = document.querySelector('.js-reg-form__login-button');
@@ -39,4 +40,7 @@ function showForm() {
   addLoginButtonListener(reg, login);
 }
 
-showForm();
+window.addEventListener('DOMContentLoaded', () => {
+  showForm();
+  formValidation();
+});

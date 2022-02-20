@@ -3,17 +3,19 @@ include ../button-radio/button-radio
 include ../button-toggle/button-toggle
 
 mixin regform()
-  .reg-form
+  form.reg-form
     .reg-form__title Регистрация аккаунта
     .reg-form__content-wrapper
       +field-default({
         type: "text", 
-        placeholder: "Имя"
+        placeholder: "Имя",
+        dataName: "name"
       })
     .reg-form__content-wrapper.reg-form__content-wrapper_min
       +field-default({
         type: "text", 
-        placeholder: "Фамилия"
+        placeholder: "Фамилия",
+        dataName: "name"
       })
     .reg-form__radio-buttons
       +radio-buttons({
@@ -31,7 +33,8 @@ mixin regform()
       +field-default({
         fieldName: "ДАТА РОЖДЕНИЯ", 
         type: "text", 
-        placeholder: "ДД.ММ.ГГГГ"
+        placeholder: "ДД.ММ.ГГГГ",
+        dataName: "date"
       })
     .reg-form__content-wrapper
       +field-default({
