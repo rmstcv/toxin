@@ -10,21 +10,32 @@ include ../button/button
 include ../logo-text/logo-text
 
 mixin header(options)
+  - 
+    var about="О нас"
+    var aboutHref="/mock-address/change-me"
+    var services="Услуги"
+    var servicesHref="/mock-address/change-me"
+    var vacancies="Вакансии"
+    var vacanciesHref="/mock-address/change-me"
+    var news="Новости"
+    var newsHref="/mock-address/change-me"
+    var agreements="Соглашения"
+    var agreementsHref="/mock-address/change-me"
   header.header
     .header__wrapper
       +logo-text()
       nav.header__nav-wrapper
         div(class="header__nav header__nav_about")
-          a(href="/mock-address/change-me") О нас
+          a(href=aboutHref)=about
         div(class="header__nav header__nav_services header__nav_nohover")
-          a(href="/mock-address/change-me") Услуги
+          a(href=servicesHref)=services
           button(class="header__nav-drop")
         div(class="header__nav header__nav_vacancies")
-          a(href="/mock-address/change-me") Вакансии
+          a(href=vacanciesHref)=vacancies
         div(class="header__nav header__nav_news")
-          a(href="/mock-address/change-me") Новости
+          a(href=newsHre)=news
         div(class="header__nav header__nav_agreements header__nav_nohover")
-          a(href="/mock-address/change-me") Соглашения
+          a(href=agreementsHref)=agreements 
           button(class="header__nav-drop")
         if options.logged
           .header__logged
@@ -36,3 +47,30 @@ mixin header(options)
               +simple-button({type: 'uncolored-header',text: 'войти'})
             .header__button-reg.js-header__button-reg
               +simple-button({type: 'long-header',text: 'зарегистрироваться'})
+    .header-mobile
+      label(for="menu-checkbox")
+      input(type="checkbox" id="menu-checkbox")
+      .header-mobile__menu
+        .header-mobile__menu-wrapper
+          div(class="header-mobile__nav header-mobile__nav_about")
+            a(href=aboutHref)=about
+          div(class="header-mobile__nav header-mobile__nav_services header-mobile__nav_nohover")
+            a(href=servicesHref)=services
+            button(class="header-mobile__nav-drop")
+          div(class="header-mobile__nav header-mobile__nav_vacancies")
+            a(href=vacanciesHref)=vacancies
+          div(class="header-mobile__nav header-mobile__nav_news")
+            a(href=newsHre)=news
+          div(class="header-mobile__nav header-mobile__nav_agreements header-mobile__nav_nohover")
+            a(href=agreementsHref)=agreements 
+            button(class="header-mobile__nav-drop")
+          if options.logged
+            .header__logged
+              .header__user-name= options.name
+          else
+            .header-mobile__entry.js-header__entry
+              .header-mobile__button-login.js-header__button-login
+                div(class="header-mobile__nav") Войти
+              .header-mobile__button-reg.js-header__button-reg
+                div(class="header-mobile__nav") Зарегистрироваться
+      //- .overlay

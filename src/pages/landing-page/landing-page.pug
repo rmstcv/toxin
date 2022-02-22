@@ -13,11 +13,10 @@ html(lang="ru")
   body
     .landing-page
       .landing-page-container
-        +landing-image()
         .landing-page__header
           +header({logged: false})
         .container
           .landing-page__form
             +check-in-form("search-room.html")
-        .landing-page__footer
-          +footer()
+        +landing-image()
+        +footer()
