@@ -1,7 +1,7 @@
-@import "/libs/fonts.css";
+@import '/libs/fonts.css';
 
 * {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

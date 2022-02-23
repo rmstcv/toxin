@@ -1,6 +1,6 @@
-@import "../button/button";
-@import "../dropdown/dropdown";
-@import "../dropdown-date/dropdown-date";
+@import '../button/button';
+@import '../dropdown/dropdown';
+@import '../dropdown-date/dropdown-date';
 
 .check-in-form {
   @include form-container;

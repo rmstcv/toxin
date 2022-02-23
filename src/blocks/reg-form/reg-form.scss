@@ -1,6 +1,6 @@
-@import "../fields/fields";
-@import "../button-radio/button-radio";
-@import "../button-toggle/button-toggle";
+@import '../fields/fields';
+@import '../button-radio/button-radio';
+@import '../button-toggle/button-toggle';
 
 .reg-form {
   @include form-container;

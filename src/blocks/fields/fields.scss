@@ -38,14 +38,14 @@
   &__check-mark {
     &_subscr {
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 18px;
         height: 18px;
         top: 50%;
         right: 4px;
         transform: translate(-50%, -50%);
-        background: no-repeat url("/blocks/fields/arrow_forward_black.svg");
+        background: no-repeat url('/blocks/fields/arrow_forward_black.svg');
         cursor: pointer;
       }
     }

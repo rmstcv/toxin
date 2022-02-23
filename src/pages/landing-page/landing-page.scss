@@ -1,12 +1,12 @@
-@import "../../less/variables";
-@import "../../less/mixins/types";
-@import "../../less/mixins/marks";
-@import "../../less/mixins/inputs";
-@import "../../less/mixins/form-container";
-@import "../../blocks/header/header";
-@import "../../blocks/landing-image/landing-image";
-@import "../../blocks/check-in-form/check-in-form";
-@import "../../blocks/footer/footer";
+@import '../../less/variables';
+@import '../../less/mixins/types';
+@import '../../less/mixins/marks';
+@import '../../less/mixins/inputs';
+@import '../../less/mixins/form-container';
+@import '../../blocks/header/header';
+@import '../../blocks/landing-image/landing-image';
+@import '../../blocks/check-in-form/check-in-form';
+@import '../../blocks/footer/footer';
 
 .landing-page-container {
   max-width: $container-width;

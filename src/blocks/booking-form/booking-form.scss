@@ -1,7 +1,7 @@
-@import "../dropdown/dropdown";
-@import "../dropdown-date/dropdown-date";
-@import "../room-short-info/room-short-info";
-@import "../button/button";
+@import '../dropdown/dropdown';
+@import '../dropdown-date/dropdown-date';
+@import '../room-short-info/room-short-info';
+@import '../button/button';
 
 .booking-form {
   @include form-container;
@@ -50,7 +50,7 @@
     margin-left: 5px;
     cursor: pointer;
     &::after {
-      content: "i";
+      content: 'i';
       position: absolute;
       line-height: initial;
       font-weight: 700;

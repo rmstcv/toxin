@@ -1,4 +1,4 @@
-@import "air-datepicker/air-datepicker.css";
+@import 'air-datepicker/air-datepicker.css';
 
 .date-picker {
   width: 100%;
@@ -44,7 +44,7 @@
   &.-selected-.-range-to-,
   &.-focus-.-range-to- {
     &::after {
-      content: "";
+      content: '';
       width: 50%;
       height: 100%;
       position: absolute;
@@ -65,7 +65,7 @@
 .air-datepicker-cell.-in-range- {
   background: none;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -76,7 +76,7 @@
 
 .air-datepicker-cell.-selected-.-range-from-.datepicker-inrange-background-none {
   &::after {
-    content: "";
+    content: '';
     width: 50%;
     height: 100%;
     background: none;
@@ -180,9 +180,9 @@
   display: none;
 }
 
-.air-datepicker-nav--action[data-action="prev"]::before,
-.air-datepicker-nav--action[data-action="next"]::before {
-  content: "";
+.air-datepicker-nav--action[data-action='prev']::before,
+.air-datepicker-nav--action[data-action='next']::before {
+  content: '';
   position: absolute;
   width: 18px;
   height: 18px;
@@ -191,12 +191,12 @@
   transform: translate(-50%, -50%);
 }
 
-.air-datepicker-nav--action[data-action="prev"]::before {
-  background: no-repeat url("/blocks/date-picker/arrow_back_black.svg");
+.air-datepicker-nav--action[data-action='prev']::before {
+  background: no-repeat url('/blocks/date-picker/arrow_back_black.svg');
 }
 
-.air-datepicker-nav--action[data-action="next"]::before {
-  background: no-repeat url("/blocks/date-picker/arrow_forward_black.svg");
+.air-datepicker-nav--action[data-action='next']::before {
+  background: no-repeat url('/blocks/date-picker/arrow_forward_black.svg');
 }
 
 .dropdown-date__date-picker-double .air-datepicker-body--cells.-days- {

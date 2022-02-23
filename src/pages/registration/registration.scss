@@ -1,12 +1,12 @@
-@import "../../less/variables";
-@import "../../less/mixins/types";
-@import "../../less/mixins/marks";
-@import "../../less/mixins/inputs";
-@import "../../less/mixins/form-container";
-@import "../../blocks/header/header";
-@import "../../blocks/reg-form/reg-form";
-@import "../../blocks/login-form/login-form";
-@import "../../blocks/footer/footer";
+@import '../../less/variables';
+@import '../../less/mixins/types';
+@import '../../less/mixins/marks';
+@import '../../less/mixins/inputs';
+@import '../../less/mixins/form-container';
+@import '../../blocks/header/header';
+@import '../../blocks/reg-form/reg-form';
+@import '../../blocks/login-form/login-form';
+@import '../../blocks/footer/footer';
 
 .registration {
   &__header {

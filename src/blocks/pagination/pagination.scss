@@ -1,4 +1,4 @@
-@import "../../libs/jquery.pajinatify/jquery.pajinatify.scss";
+@import '../../libs/jquery.pajinatify/jquery.pajinatify.scss';
 
 .pajinatify {
   justify-content: flex-start;
@@ -27,14 +27,14 @@
 }
 .pajinatify > span.pajinatify__arrow.arrow__next {
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 18px;
     height: 18px;
     top: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
-    background: no-repeat url("/blocks/pagination/arrow_forward.svg");
+    background: no-repeat url('/blocks/pagination/arrow_forward.svg');
     margin: 0;
     padding: 0;
     border: none;
@@ -43,14 +43,14 @@
 
 .pajinatify > span.pajinatify__arrow.arrow__prev {
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 16px;
     height: 18px;
     top: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
-    background: no-repeat url("/blocks/pagination/arrow_back.svg");
+    background: no-repeat url('/blocks/pagination/arrow_back.svg');
     margin: 0;
     padding: 0;
     border: none;

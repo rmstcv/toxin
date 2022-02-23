@@ -41,14 +41,14 @@
       opacity: 1;
     }
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 18px;
       height: 18px;
       top: 50%;
       right: 4px;
       transform: translate(-50%, -50%);
-      background: no-repeat url("/blocks/button/arrow_forward_white.svg");
+      background: no-repeat url('/blocks/button/arrow_forward_white.svg');
     }
   }
   &_header {
