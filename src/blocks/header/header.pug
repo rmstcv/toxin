@@ -22,6 +22,7 @@ mixin header(options)
     var agreements="Соглашения"
     var agreementsHref="/mock-address/change-me"
   header.header
+    input(type="checkbox" id="menu-checkbox") 
     .header__wrapper
       +logo-text()
       nav.header__nav-wrapper
@@ -47,9 +48,10 @@ mixin header(options)
               +simple-button({type: 'uncolored-header',text: 'войти'})
             .header__button-reg.js-header__button-reg
               +simple-button({type: 'long-header',text: 'зарегистрироваться'})
+    
       label(for="menu-checkbox")
         .header-mobile__icon
-    input(type="checkbox" id="menu-checkbox")
+    
     .header-mobile
       
     .header-mobile__menu
@@ -71,7 +73,7 @@ mixin header(options)
             .header__user-name= options.name
         else
           .header-mobile__entry.js-header__entry
-            .header-mobile__button-login.js-header__button-login
-              div(class="header-mobile__nav") Войти
-            .header-mobile__button-reg.js-header__button-reg
-              div(class="header-mobile__nav") Зарегистрироваться
+            .header-mobile__nav
+              div(class="header-mobile__button-login js-header__button-login") Войти
+            .header-mobile__nav
+              div(class="header-mobile__button-reg js-header__button-reg") Зарегистрироваться

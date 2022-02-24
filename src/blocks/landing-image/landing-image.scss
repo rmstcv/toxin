@@ -11,8 +11,8 @@
 
 .landing-image img {
   display: block;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 .landing-image__text {
