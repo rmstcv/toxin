@@ -142,7 +142,7 @@
   }
   &__menu-wrapper {
     transition: margin-top 0.5s, opacity 0.5s;
-    margin-top: -300px;
+    margin-top: -400px;
     transition-delay: 0.2s;
     opacity: 0;
   }
@@ -173,7 +173,6 @@
   &__button-reg:hover {
     font-weight: 700;
     color: $color-dark-75;
-    // cursor: pointer;
   }
   &__entry {
     margin-top: 30px;

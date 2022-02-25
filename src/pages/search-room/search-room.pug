@@ -19,6 +19,8 @@ html(lang="ru")
         +header({logged: false})
         .container
           .search-room-content
+            input(type="checkbox" id="search-room-content-input")
+            label(class="search-room__filter-label" for="search-room-content-input") фильтр номеров
             .search-room__filter.js-search-room__filter
               +dropdown-date({
                 fieldName: "даты пребывания в отеле", 

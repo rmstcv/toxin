@@ -15,7 +15,7 @@
   max-width: $container-width;
   margin: 0 auto;
   .container {
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    box-shadow: 0px 0px 20px rgba(31, 32, 65, 0.05);
   }
 }
 
@@ -23,6 +23,8 @@
   display: flex;
   padding-top: 30px;
   padding-bottom: 70px;
+  z-index: 1;
+  position: relative;
 }
 
 .search-room {
@@ -38,5 +40,44 @@
   &__text {
     @include type-h1;
     margin-bottom: 20.5px;
+  }
+  .container {
+    position: relative;
+  }
+  #search-room-content-input {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    &:checked ~ {
+      .search-room__filter {
+        display: block;
+        z-index: 100;
+        background-color: white;
+      }
+      .search-room__filter-label:after {
+        transform: rotate(225deg);
+        top: 1px;
+      }
+    }
+  }
+  &__filter-label {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    top: 12px;
+    cursor: pointer;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: 2px solid $color-dark-75;
+      transform: rotate(45deg);
+      border-top: 0;
+      border-left: 0;
+      margin-left: 8px;
+      position: relative;
+      top: -2px;
+    }
   }
 }

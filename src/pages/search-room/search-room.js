@@ -1,4 +1,5 @@
 import './search-room.scss';
+import '../../less/media.scss';
 import '../../main';
 import '../../blocks/header/header';
 import '../../blocks/dropdown/dropdown';

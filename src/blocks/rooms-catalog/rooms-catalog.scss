@@ -3,11 +3,12 @@
 
 .rooms-catalog {
   &__rooms {
-    width: 840px;
+    // max-width: 840px;
     min-height: 1164.3px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    justify-content: space-around;
     gap: 20.5px 12px;
   }
   &__pagination {

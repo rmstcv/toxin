@@ -35,6 +35,11 @@
   .landing-image {
     max-height: 682px;
   }
+  .search-room {
+    .container {
+      padding: 0 9.72%;
+    }
+  }
 }
 
 @media (max-width: 1023px) {
@@ -42,7 +47,9 @@
     top: 90px;
   }
   .landing-image {
-    max-height: 530px;
+    img {
+      max-height: 530px;
+    }
     &__text {
       display: none;
     }
@@ -61,6 +68,26 @@
   }
   .landing-image img {
     max-height: 500px;
+  }
+  .search-room {
+    .search-room-content {
+      flex-wrap: wrap;
+    }
+    &__text {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    &__rooms {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+    &__filter {
+      display: none;
+      margin-top: 20px;
+    }
+    &__filter-label {
+      display: block;
+    }
   }
 }
 
