@@ -156,8 +156,8 @@
       @include type-body;
       color: $color-dark-50;
       text-decoration: none;
-      font-size: 1.8rem;
-      line-height: 2.5rem;
+      font-size: 1.2rem;
+      line-height: 2rem;
     }
   }
   &__nav-drop {
@@ -182,8 +182,8 @@
     @include type-body;
     color: $color-dark-50;
     cursor: pointer;
-    font-size: 1.8rem;
-    line-height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
     color: $color-dark-75;
   }
 }

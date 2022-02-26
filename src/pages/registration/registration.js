@@ -1,4 +1,5 @@
 import './registration.scss';
+import '../../less/media.scss';
 import '../../main';
 import '../../blocks/header/header';
 import formValidation from '../../blocks/reg-form/reg-form';

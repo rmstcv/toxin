@@ -15,11 +15,11 @@ html(lang="ru")
       .registration-container
         .registration__header
           +header({logged: false})
-        .registration__image
-          img(class="landing-image__image" src=require("/pages/registration/" + "registration" + ".jpg") alt="image" loading="lazy" width="1440" height="753")
-        .registration__reg-form.js-registration__reg-form.registration__reg-form_hidden
-            +regform()
-        .registration__login-form.js-registration__login-form.registration__login-form_hidden
-            +login-form()
-      .registration-container
+        .registration-container
+          .registration__image
+            img(class="landing-image__image" src=require("/pages/registration/" + "registration" + ".jpg") alt="image" loading="lazy" width="1440" height="753")
+          .registration__reg-form.js-registration__reg-form.registration__reg-form_hidden
+              +regform()
+          .registration__login-form.js-registration__login-form.registration__login-form_hidden
+              +login-form()
         +footer()
