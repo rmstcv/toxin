@@ -236,9 +236,22 @@ class Dropdown {
   }
 
   hideClearButton(item) {
-    if (item.classList.contains('dropdown__counter')
-       || item.classList.contains('dropdown__confirm-button_clear')
-       || item.classList.contains('dropdown__check-wrapper')) {
+    const isConditions = (arr) => {
+      let conditions = false;
+      arr.forEach((elem) => {
+        if (item.classList.contains(elem)) {
+          conditions = true;
+        }
+      });
+      return conditions;
+    };
+    const arr = [
+      'dropdown__counter',
+      'dropdown__confirm-button_clear',
+      'dropdown__check-wrapper',
+      'dropdown__check-mark',
+    ];
+    if (isConditions(arr)) {
       const confirmPanel = this.findElem('.js-dropdown__confirm-panel');
       const clearButton = this.findElem('.js-dropdown__confirm-button_clear');
       const data = this.getDropdownData();
