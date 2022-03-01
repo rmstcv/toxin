@@ -1,6 +1,6 @@
 # TOXIN
 
-[https://rmstcv.github.io](https://rmstcv.github.io/toxin/dist/index.html)
+[https://rmstcv.github.io/toxin/dist/landing-page.html](https://rmstcv.github.io/toxin/dist/landing-page.html)
 
 ## Plugins:
 
