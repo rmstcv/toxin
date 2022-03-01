@@ -64,7 +64,7 @@
 
 .noUi-horizontal {
   height: 6px;
-  @include input_medium;
+  max-width: 264px;
 }
 
 .noUi-horizontal .noUi-handle {
@@ -77,15 +77,5 @@
 }
 
 .noUi-handle.noUi-handle-upper {
-  right: -8px;
-}
-
-.noUi-base,
-.noUi-connects {
-  width: 98%;
-}
-
-.noUi-connect,
-.noUi-origin {
-  width: 98%;
+  right: -2px;
 }

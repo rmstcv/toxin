@@ -1,7 +1,7 @@
 function addStars(elem, stars) {
   const starsElem = document.createElement('div');
   starsElem.classList.add('rate-buttons');
-  elem.append(starsElem);
+  elem.prepend(starsElem);
   for (let i = 0; i < stars; i += 1) {
     const star = document.createElement('div');
     star.classList.add('rate-buttons__item', 'rate-buttons__item_colored');

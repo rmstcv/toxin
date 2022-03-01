@@ -26,8 +26,8 @@
     display: grid;
     grid-template-columns: 0.84fr 1fr 1fr;
     padding: 70px 0;
-    row-gap: 30px;
     column-gap: 70px;
+    row-gap: 32px;
   }
   &__details {
     grid-row: 1/2;

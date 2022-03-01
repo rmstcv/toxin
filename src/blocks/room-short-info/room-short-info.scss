@@ -9,7 +9,6 @@
   }
   &__room {
     @include type-h1;
-    margin-left: 5px;
   }
   &__class {
     @include type-h3;
@@ -26,7 +25,6 @@
   &__text {
     @include type-h3;
     text-transform: inherit;
-    margin-left: 5px;
     color: $color-dark-50;
     font-weight: 500;
   }
