@@ -16,40 +16,6 @@ const optimization = () => {
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
-      // cacheGroups: {
-      //   landingPageStyles: {
-      //     type: "css/mini-extract",
-      //     name: "styles_landingPage",
-      //     chunks: (chunk) => {
-      //       return chunk.name === "landingPage";
-      //     },
-      //     enforce: true,
-      //   },
-      //   searchRoomStyles: {
-      //     type: "css/mini-extract",
-      //     name: "styles_searchRoom",
-      //     chunks: (chunk) => {
-      //       return chunk.name === "searchRoom";
-      //     },
-      //     enforce: true,
-      //   },
-      //   roomDetailsStyles: {
-      //   type: "css/mini-extract",
-      //   name: "styles_roomDetails",
-      //   chunks: (chunk) => {
-      //     return chunk.name === "roomDetails";
-      //   },
-      //   enforce: true,
-      // },
-      // registrationStyles: {
-      //   type: "css/mini-extract",
-      //   name: "styles_registration",
-      //   chunks: (chunk) => {
-      //     return chunk.name === "registration";
-      //   },
-      //   enforce: true,
-      // },
-      // },
     },
   }
 
@@ -171,6 +137,16 @@ const config = {
       },
       {
         test: /\.(woff2|woff|ttf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.svg$/,
+        include: [
+          path.resolve(__dirname, 'src/assets/fonts/'),
+        ],
         type: 'asset/resource',
         generator: {
           filename: 'static/fonts/[hash][ext][query]'

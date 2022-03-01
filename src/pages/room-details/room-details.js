@@ -1,5 +1,4 @@
 import './room-details.scss';
-import '../../less/media.scss';
 import '../../main';
 import '../../blocks/header/header';
 import addImages from '../../blocks/room-details-images/room-details-images';

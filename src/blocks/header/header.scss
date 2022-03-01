@@ -1,5 +1,6 @@
 @import '../button/button';
 @import '../logo-text/logo-text';
+
 .header {
   position: relative;
   top: 0;
@@ -141,9 +142,8 @@
     padding: 0 9.72%;
   }
   &__menu-wrapper {
-    transition: margin-top 0.5s, opacity 0.5s;
-    margin-top: -400px;
-    transition-delay: 0.2s;
+    margin-top: -500px;
+    transition: 0.5s;
     opacity: 0;
   }
   &__nav {
@@ -192,12 +192,10 @@
   .header-mobile__menu {
     height: 100vh;
     overflow: hidden;
-    transition-delay: 0s;
   }
   .header-mobile__menu > .header-mobile__menu-wrapper {
     margin-top: 0;
     opacity: 1;
-    transition-delay: 0s;
   }
   .header__wrapper > label .header-mobile__icon {
     background: transparent;

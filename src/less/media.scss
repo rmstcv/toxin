@@ -58,6 +58,9 @@
       grid-column: 1/3;
     }
   }
+  .rooms-catalog__rooms {
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -124,6 +127,7 @@
   .room-details {
     &__content {
       grid-template-columns: 1fr;
+      justify-items: center;
     }
     &__vote {
       grid-row: 2/3;
