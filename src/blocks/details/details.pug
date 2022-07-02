@@ -1,6 +1,0 @@
-mixin details(options)
-  .details
-    img(class="details__image"  src=require("/blocks/details/" + options.image + '.svg') alt="image" loading="lazy" width="40")
-    .details__text-content
-      .details__text.details__text_bold= options.title
-      div(class= `details__text details__text_${options.name}`)
